@@ -4,15 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pantau Project</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAARCAMAAACLgl7OAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAEXUExURfX3+fT3+fX4+vX4+fb5+vf5+vb4+vv8/f7+/vz+/vr9/v79/P79/fb4+fr7/P////z9/v///v7+/f7///z8/f3+/tb3/Ivn94vt+tb8/f3u1/7v3vz8/JPa8gCZ2gua2gqk3gC877Lt6/+wbPvcyP/+/vz7+/T4+dzv+gF/0F6Z1f/5+//7/ZfJ5cC9qPDr5Pf4+fv9/qvU8QBWu9Le7pXG4ZDB273Fy0m+4aLx//v+/vf4+p3B6BhjvW6k1rjY77nX6m/D6gCp6cfv+cHQ6jV2xiWD1GG16lO57QCV4mPC7MfV7AVRujR6yEuU11Gf3qHN7v/9/p234QAqndzh7f39/tDb7p602vr8/ff5+/v7/Pz9/fv8/MPXTp0AAAABYktHRA8YugDZAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH6goGCBUzkqYDgwAAI3B6VFh0UmF3IHByb2ZpbGUgdHlwZSBhcHAxMQAAeJztXVmW4zqu/Mcqegmch+Vw/H77/3oBSk7bkmzLtM4bzqnqrluZaaVEgkAAQSEkSv/1X1LSf/7zHyWDE2SSFfgjxfJn/GutLS5566pT64/b+r1xWisvHI6T/FeE8XlKJIQOMXsp9P2Q8ave+ueTGf94Mvz7dDLis91Pht9Wrul0Oym+Ulo654yO+GWpo6q4otSKv3L4RAvn8DNNjn9o8KXRwVlczSw/wXdKB30bnxbieXwqPI1Pk9fb2e4nq5rXLjrvmpPejFHb9QKqCqedcp28qioYG4VTKSl84mTAMij8ROumRVD4N41/VRF8FYGj8FdJg8t6rV0RRXtq+Mj17oNsRYZuahK96GwqJoHBJuFwjhScCaXpKgxOpLWwEpPO+BwDENpaYYgtKhQWXGspcQimuX6Ek2AIWKuO/3lXnFXCFPwPR8KmQuW/I7UopMzmUNgFn0l8VYfxI2wkrHawjHf4jr/SmK+0mJ+JRo9jPWkeRZNeVKwVFhP/VdpigZe/Vhub1k/9+ql4+FRb2M9lLel5pu8mik9eTFQWLUimv0MzLKifD7XaR6+9wSSrEmPEsDVGJVXEFf3dSgTvE5vrPNpGwGf6YpfhS835vcWwipE0e63D8fclZj95XnQcJLxAAHDItYb10sWGpkplS6murSIVbHYhYjF79HDnlqMM+H0jvVcaXlVca8UEUb2CRVrKyhqtcsKBLRfbdBYlWkc1ZOmlS7kUX1y0QdecAjxPNx9Thn2ThldLu3i3tLCTaIttZBUdY5W9s0Oa4fTwc4y/3w4YrhTwEzcmya4nYTDLE+S1FWn9mRE4rAXbiC2Ca5TbKaS+XUNwiPDp69/1G07v8NfU0H2qUfBlsGqqB8K0GDJkza4JBJytKsn8NDp9G10QOEXyuclcs1ElJAwF163OZYqpeJO67Kl2rDO815XddCRPAucVsK1Qu+kyEhEGk1wAyhhMP6mu+h8KVTfO7AXwCGHgooIXLR6HFYc3PJ6Q1jMC8PD/pxPuf/nvEt3dnbZqhKKqNLyTrw4HxS9peKyBPfyfheCCAEss+boku/XiiXOsccDG3Ye8yMe/htAd2Lb5LRofGmFgwqLMgAiMEX+QBjDGCiPhz8gUHtBgMGTGzojj8BUCRLhxJGHpHT6WmDMC8BW4IvAD+xRAX3FmCchcqZWWYrZ9xDpFo3qvQJAO30haySityYi8FPjbhGPggEh2KukML4SrMKrkWqV0OvTafbcIYiqpx8DXAboYr0vJHYGNAXoDzw1S4rxYRayLaA0TNrVhqDiBzCY3XD4lhLkHQiJMeYlFtr5iVCpVa01sIatiXC89ITEptjEnpFqWf51+TkxGUk/J4ivvnZI2IAB6xCl6DxUXxcrIhoG014mJoZbhms7h9evEJPsS1nTPTIjeF4nJMtzCxvyzJfk85R6stbaAWpQKnGTgLJyQ1uSjx5rb/adHWZbnQldkWU6ydEWW5fGTdwyJh3nEqhw4koTilDYySA5KN8xAmqSiqyl54V30sgYyJmf8uEcMNNqEAcvhlzpU/Dc5X3JySSU4LmonE7JOiC2ZSguxucD+mHxLjXxplZ0CM8ZEureASrgTsjlqKotSxyEDoe6JVjW4ajPWwPRc/YhsnIOJXetNoxrJMgaRE8oma5CDYkOAxyUFibCkIHECoWgPUUdZa01asNyrpEXnstaStLBE+6QVuE4F+I9v+VqMNmabH5b8gbgWnGHVLr+saC8c8tpJuPe3MNmg+y050XN2mk9O9CqjxmJLDSGi9kM5YYFSAdlY6Npk9LCNgm8peOQtpdMmp79IyPt8vMUn+gN3v5qbSwdVXIWRa6k221pzESi7G7yyWjgxplqlT6kh0qSTVmI1CzW4OnJBs8V231AjKT6qWww7y95yBScK0kYlfB7IjrRUEH0BPAEZzGNQ1odWyWSPWXggc3QBuI4xCZSK3WEkXoegcCDsU8Atguu6ma4LbFxQ56kae1PVel9LIYSgXyiLNVy/IgNJxPP42gL9sT6IJpxS4ufIkaBWBenAr+kA5xg5NxEbC5fCtEfBqdL4uNTlsBKHszLA4yeCXTHCxvgdLK4dcTB8PkiKjDx5sf7fCePgXQYnlYxIHn7iF5SSzwEE7+RLJYTIyPZC1ONrCeZlAH3LCx7ZjIhUJGafInhmS77mjHRroyEQMzhq4A+lcUjVtSeXazS1N8/JD6eCD6G8jslmLCOfRyFSQobDxCQ8smnUhoDOiAzRB1lRg68Ot1rzBxOGURpjxGNqgSed8DUq0dwqYsGxWzbK1sVhYBv7yhMXOFOm7/iibq60mAUWHZUmcLBgHnH4L4UeokRp4csbvqiOMtlzIqNTmaytWHTPZHablekvk4HZMnvGHDmfIa/BZ5lgSVexGisves5lj0mbUMSxWSUXe/h3cMI1abPZ4/pXrp+qkbT1fqo0wxgZyFS9TxWcz9F2rrsJioMJ8saJ4SDGsRyXwAayPGSs/fcEEGwGKx6rQiYBO1IMv0AdWRPq0x48fFmhCgx6oHoDx0Mmx9UilxStIXqMRt41vCGSCmAtKxVRZ/eApKdaqAX2AzUA50PoFIGUDysB8Pg3Oq/Amn0ZPmSv20RKT5l00L9vuZvyGJgnlAUNgzUmNIfYw3y5nnZFhWyqjzmHN9wNFU70ocC0hsBtdVPgtAYncQ4fOFlSgx1hny+4G12THjXv1hxm82+42/A94phiqB9X/YG70WNlNMj5rfK5rdcdXp7Ln/AMO/REpR6yrS7Kg5SAD1lEMLhNyyHFmiNcNcSaJBbLyiKbSLkVUym7WgHkCom9gf941JS2FIOraPBA2xtGgaHV0lFO8ohwEVu8aoj8jhITlWeE8RoVFKMALtUB98i5RdVaGphd9Lpl0VPPUhQAqzKocRGwXHGahhFWW+B4qSpOBklQ5N2gBatXzLZuQ6GQRxB5yCkMOQWFfELiYPqJJUyhi5i9M9TNZwp1hkHRGQp1hkHRGQr1gkGZRwZFGwp1IvEc5x36PvEc5x06l3g+cyh6JFFJe6bxKEZ5DWU3gBuF+LHwsgSARyHa4DQt4BMFamVAmOBOwHLQdVSZuArcAyMpIvK2hvJKKWAaknqUtqOkdQW2iD35gmrZ825GA3ECthsUKTCIQhEBxmQxNrg7OJgEvdItFVB3VZQ2HWErAaFYd48vdXC5gE3Cna3JoG8oCHseGB5oZovn3a7fQqD0I4F6ByB7nkR3ovQbT6I7UfqNJ9GrXbxvEwHdM8FvPInuRGnDkx6S3/vctywIHWyCPSC3kTgTimtZDbwR8GjBkqypge+P4CMLFuIxKJvJJCmDcbr3ZAOYRTQKxwUJYA2AX28lWxxhEXhTQwUbYMSB3LheTmA2SA2odKnYBsKAkhcAAQvoboDhQJQWUfSmBiO4Erv3wuI6EQOEaWrPyBUoErryqAmRX3IimYBBTfFGoeSyxS+bX9KHpUDHJE/hFJ3c6vmIU/QKqM7g1CMfoGNC8MQHXrA0JmGJawNe/khbpraQvNccDr+4csbnTwnVrxT975bPnhsJTgqqH/0yTgtQYz6XOrUebPajpEFtA1yEc4A+KdeM9bIlnF9Y8H3N6Od8wJILsKoCfOxjH9kvo6fd8BXiTqrAwYy/vPsxrgmABhETjTekoo4g7YI3PYvENwgoTdXDY4HwBT7brbfNpo6/AHD4OdbqRULHybFuACi+jkduABXtfKsQ+AI2ziUGlq4mxFhCZHqZA0oWp0sHVVDJNOUzUoRuJWeLhKQkLz/YeCJveWHBiSrYaIwWKUOifNeI1FoQe63zOGEtzMQkmNL7DM6vZOZNRTv2AbxOkpiaLDB1++FyI7Pr5UZm60zGeX7ju7D+1Dxs1f9B7UBj/hiOPA6rY0uglYSyXg8e9bkeoM/sjO/nPdzO0+N23j2wUGBZbQWNvWG+DYeSENFkeOYH9J3vOfr1DuRw0SARdPxfxofI+9kf9iAy6sooCnI/6Dx8cHgI54pS4fwZ4CliFcWRDU14pHdZi2sB1MpKB8dOfJKIHN6r7cB8lLpBIf+7DO7YFazTG5YF8dBTEzV74p0dzn4ZeKxjRn7gguX59vK7u8t8B5xNQS9tYZhvY+XlzmJ89/3pKPZ+OnR/bcbtlCUAUJrIFDUmFU3oHcdXrCTyXU5wY0QYB12ihKXnAkgim3L9VIsBttWOMY8AQG7LIYIUpO5SwPlqRWh511JCMhCiOrDhZA3V7JgJRwsfihVZInjhbWzDk1VYN1yCWf9d74+I56Je854/MvJI7wF0uaXAhNph3TTnfqRS0+zBruP+dj29c/tvbiTQ452EX24k0GG978bWynIXzYxlVg+36xcneP4UI0pn4/t9eNP5+D4K7/uuCn2zrWJBMMFBXdU5dlwFboR00FVE0UdJMuLiCNMZzwxq7ASURomi+W5KbQURWVCwdfiyZXOUFqNBCV9Gk4GExwN1C1W+B1mBp1mhDPOISN7dAokFB+aCfGy2IhW8vTuB0oVOV9fx/fYLHdWPDhmhoLgAyym1gqUHOAtGFRPOBEshTyGT5fJYwNK5e+f7rXqzKenpVtPzBtlwxF3Nf263hN7f6j7eLRF9m9UY/PlLhnvLJjt33xi1CIoRw3exFKKj8h0DMhGJMKCMYfzIzWWVs1OF+ZrkWwEFcNNR8hjUFahtQMNQL2OkyfIeYsQpYVBAIRWPiptdnWOywwU6fCxhqbwsoJLVV1REBXRQhqId3BL1nvbIH6heUCZzT0ur+EsZl8DyqVwD8pXPle8JoiaFT6MW7wq25+iSWPaAlXr5h15/9N2fkydyZhmVVjCS6A6jQ/FmUDejoGpGZUWYHqCIA9wjMTcRDYiECSbzRo+XHiQkM2XmQts1WAS8BHEL15eoq3uuKJGxHJJQgWq+/W49CiqcG3DP3WjcGeBD9IAsrHsGRepjaDJv2uTU+j3d+tCQnE+0ofFxmCJ4Adij0+vJkLMDLV1oQDfrEtMEv5AG/hULumCw0gyQsA+OY5zWTC3wk6CXnglunEOxR5xQxsf8Qx5dGL0RSKnjK45BRNh9JJaR2uJC3BYH+seDwM8i4UcOpYnCFRvTFxwQlPq8Q2M2pyPP9XjBtdT4kUIJxJU3Zy++x9V5shhfXLvEMDTu6dBp/EyPmmS5Ka4DuzFfZZwZ0Y+BytGRxSczt5Mhkvk4HsG4O8efY7ww0G3VFGP2w7ocnOQBanj6+uGTsXYwC1YNv8gByHsRSnHQofTX0QB6o8itFaTpFnvKDrmJwSCkHDOIOwpLkFrEujFA6UBA0cchx+2Qz46Y/g4Iy9gU51A5fMncfsbj9SKHZjyIDrMC4FdupqD6iak2CwpDHUDWPP6WDoqRE/iDibyLZQryyyAfu6ZKVKW7ke+Mvf81Rm38CnyCRzcaQeEGS6Chll4NsMIIwOyxA1SeawB9tBfdDHZDnlheN5kuUXl8CdpcY2fyP2grf+FtEN6wE8cfJr/6P41buUvdY0aIjJTNMcYbBnyrCbwFyHRsqfvKEi9t1IXLIMebjcABkYByyCg+ac1Eo+CHJYMS2s4bbCjbEzKQ48oFTJl3G4GwxP5i2kfQ5q2hZ9vFZ9vRK+Nt12cfYbdLDEhQNMwnMfenQxHeMMDjz9jYd8B9RAsUE/h3gP+4byf+ThMYwB4PZWLDd/U2cPcEbfAjhjG+HWhQpHAv4vDsOKKtWEZEPhRuB6bBd6ux8FyJPW8semB2W0fDZQvDKG9e8nW4CwCnGWUwx/fTBfzDBfy4AN876vhSDWhvPBGz+Mt6oxJ+MqqkO5HYWS+z9Wg13zjo0XiHtgsG5ZdnL4+r7eLY7bJ8N4sHtxys7k25+DWMhfMakMgvRvej3Rz/zUe2pLPG/GRLOmvMT7akvTGHuzZtvumpR330oadej9PDNbFUFqUn53q+N+NGd33kz/AV7Mv9kHb01DOdYwjGMYC9iMIAeX8Np4899R7k+JKeeiz/NT31DTXkJT31bxsHvuv22zUOzHb70TU99SLTNT31Mt23NH7qqZearumpZ057SU+9QoK8pKe+omK7pKee769d0lMPBnlNT72XdE1PfUx0TU99QNBe0lM/diKu6KlndnRJT70c24cX9NSDQlzTU69Bai7pqecWvUt66kuia3rqsfzX9NT3RNf01P+8e3xvCKHPHSHnGkLomp564NE1PfVcsV3SU486+5qeemPomp56X+iannqV6Zqeeu71u6SnnjsQLumpx4iu6alHwX5NT/1lTYOy0y+9Io+tInRNT/1SjVzQU98aXdNTbzJd01OfwNfmeurl2lNfby0OdNhT39ae+nS2pz6O/uwLeuoZs0/01MOf+L43FgoTA7eFsxYYqxUL5wA3F6iJKQBaivLw1WAy38hGXIUmcs5dLj31KIGyDzWyFZtL7KLwTQUXt9kbWa3hXU4K4W1PPSrMVz31SK0e1XtvyBo6UwxLT32SK09Mhz31GuhkNPIv33MGZWkJjld0qqBPnPATgRIY+7KgOd/YSFd01HMaoys66rldnp466v3bjvolZZuvUvZrvsirqtoj5eMSbZOyZzvqeZQ02jcmeuoLYpVrUYXIVCYGVGwAQ9EAWlzplSAiasIEXwmAGe9F4v4zGbKA5xcNxECOB+Q67mFG6kVOz8FjcSk121xHSRlNAB641IPpUiXeH4kRRSwXhoDB9z31S177qaceRQFQ1UiSljtTZOpOAeGD8tW3HpXqbelIOddTj1i7pqeei4hLeup30rzZnnpn6Zqe+pt4+eee+tLogUrFkW3dQqV6wQqbAnxUCBUUnNrCTWJs8F/UdxFUCdCHVCVjzqVxZ52JqH0TRldtarlxL0NtAFdwKcRc4Ns6odYEiJe8tuMycBxXkc3xDdJPDbkSzMriEIna1XJmqtzAjARVufK1xWtwMkzD8q4QfAaRKzJq1ljYaDiyNyQJ3QRLqkwpv/fVkzPX9NXTWRr1iUXRWRr1qa+edjRqsq+eZtPPNvvQ2fTzqa+enonUfF89wfkv6asnANglffXUwzV99bQhUdN99fRMlua5Ej2TpXmuRM9kaZ4r0TNZmudK9EyW5vvq6XAjbKKvnmy+pq+eYr6mr55y2vXV57Wv3v/11cfPOEWnt3s+4BS9FgCd7KtfOQG9JgV/nOD/Vle94SL+c1e9QKZlXWUFZ5KoE1DdovjjTtlSsxU1cscGfDAwg+e74tzZ1CNIerYZBYCf6KoH1opYAbRFJVw1c2ORCh5Yp6R3plJLvSP5l9Id6mkQVEQU97A5jETF8GpX9KmrHsVzh0NqxmZTU9calU5SHMy8D+AAz1L55LRtKYMn2lRSQoWD4VX4FsfiaCrW0cVGqPotPg6C2UB2PtvKW80iRe91jdnIFLndriMSqg4IRGerEbW5f131/7rq/3XV/+uq/9dV/6+r/l9X/b+u+rNd9X+dpfs//7Nd9Uc99Rk1r7SwN3IgYq0RHBGpKXpk3MAP4eCHkPQGk6OEMwYmgZuydTKQA8lB5pJlC9yZi2UAua9YHIN4pYJqNHuYGVWezSngBN0aG8FFmFF4wELAAUvbGaj3cU+9M3RFT33DMfS5p559m7sG8V9UK6NTQoyOO7U20gvuuOPn1nh+fO3oqQes8/VHpzoOcaMJ70xPvQOnvaSnHiz7mp56HehkT71+alCv+wZ1+rKnfnC2cWEz+kabN2MFNT13qocSuJQoqCyybz11JADjshj3MXxTDRVSEqzpDZzhQPJSYjyJmjDWzJ2H78QAZzrr6YwY4D5iMK5QjLJKFTCNyt2RCAQeA3I/SL9NKO8ySibQkMg7XSHZBEqPYreNrtvPWgD6ytRvtACjYxycqNYWAkIVOdADWj0HDNABqRmjA8wqlINFF27sbQnhhAKz4CtOgq2wFoDOiAHOaAHopRiAldAvm833WgA6IwY4owWgM2KAM1qAgdmfxABntAAEfK2fxAC8sjoYCfwVWF5U4b2kCrqcUYZUfmaPy5Q1EB+n9Mk31HXIv527LkP0DVVbtbes9kkLwFOTPbwXA5yxHb0XAxT/Z70jLYC5d7PTGTHAGS0AnREDnNEC0BX966uE4ff+dW5fp+f+dayWGC34S2oySz6BofMRWq+OOpCKXmWFb5MCvcoK3yYFepUV1qRwqHs4kj3QjO7hSPZAM7qHI9kDzfrN1m1o1m+2sgeOfifaJvrLXPS/LAxWDLA1/WEAE3UG/8R11WpJRtXxjCgGCExmeLXlsB0nLUu4Ls6HyfCU/SgPBfcgcC+Ql0v/D5+c7oevHBqnYOdP0v0hFce+qaO25O3Jgd3wMD98LA505we7BcE9SJ47a9e29xBHMfi3Pn7d3b7vbfPUb2NZHGaITm/lgXkRc093aV68p4E+v6jh03salsvQq2z+NDl5ODl4mreroIAr/ysmhhNdM7EhhPs4saDk3xHDedf8YRbnHcha2LP/bnE5DlEz/MmtrWen15Q+zf3s1OnT3M9MXT6Ufi/nvl3mV1Olb5f51VTp22V+NVV6mmt9oHi7gxfkGifB0fYetKOd6f+pZ8vwfsqMTfQITr9gE8358X6iNOPH+9qEb0GvNccgxtYqLu7WJMM//Zuqbe+nSteErDb02Y/Pqdn/VNBLfX3GGsfGoANrTHk4/b7wizHoK2vsmNrdFLSGwJEt1oPN/deP3GI1BM3F+t4QNBfre0PQqW2COjD9sbRaimVAG2qZ4Un0sv552MTQH8KDzUBXhAebgfZ22JCHlrIRSNrcpGlCMihUQ6q28DOSRU1gsczuHBXenCupAPtkLkqJ2jKK+OTaO1R8nPgCgTQL9tuJ0yzYbyGQ1t2WJ7u4lIzIvSvNO7n89JWaSjPFc5tfMyjYuQtLt6ZskFomXzSoKO+H9x5yKfUlpwZU3OprJQ4LfL5TMwg+PyzjK/n0Vj1Nz6bUdoilxzNRYJHlUSkaP+VbGqyUHk9KGZq3RYcwxI+Oe0b55q2zizH/3rZ2Qj594v1r5+TTW/U0zcqnt3e3aVY+PfeI+RfCrsc9b5oXdj2rp2lWPr2d6Mu3wpxutljV009vhflGPr3dcaJZ+fS2eZ5m5dNb9TTNyqe36mmalU9v1dM0K5/eqqdpVj69VU/TrHx6ewOYZuXT26ZLmpVPb+8o06x8entHmWbl0+Lw3WIT8umteppm5dNb9fRRt88p+fRWPU2z8umteppm5dNb9TTNyqe36mmalU9vExPNyqe3ff/3rvov5dPbvn+alU9/Lzs7kWXvsrMJ+fS2659m5dNb9TTNyqe36mmalU9v1dM0K5/eIhTNyqe3SYteZ6338umtIoDOSwLeKwJoVj69TU40K5/eJlSalU9v1dM0K5/eKgJoVj69VU/TrHx6q56mWfn0Vj1N5+TTta/y6XzQyz7U0zRk02WVT4fT8mmx7bunjXyaqWPjB6t/kk9v1dN01LiM9AgnwYoY1LGqRFQYlaURAPWaKtANPsmgFzqYnhfN2Y6U3ZPCv12iBObkJxPycw8sV5LAo6pz5aO7Hh36hSk/o1zcNhLTgzyASYV9+UIy7kUChNqU4HRZrdrpNScXfj3x8QvJMla6WtnhhOD6UmcU9SiWUgCx15m1UcDHh5xMs/Lp/3392lY+/aSetveUfSSfNq9eSPYmZX/3QrKj95HRpHw6bukfnevxrUYAbEQIKMdSCUi6SSljkRKTzbn3LAlOgVpUwJGQqnsemo8WmrTZhMqt/SVLVACdb376bC33FQI1FLfKuggQlCh3jRGE4tnyfe7ULO85IV50Qcb/IJ7ea6fpIAm+YW4aRYguOiqkGdCj2BI/q5XrbyRIBVgOqHeL57bgc+LpvXaM5sTTe+ZG3yfHY+ZGc+LpvXaafn7w1aqdpjnx9J5H0UKk4Dn8BFuQcRljRw2YCzhGQu7r3P9amRMV7gXh2lPrbHUsqsoUAcrIiTlaKhVW8V5FxnX4Ab8p0jV4b+vsfIzKqRSjWKAdwIU0cnaTXbbgUgfS86Lya/tIdYC45c1llL6oSBwgg9vLWlFB19RA2LSCF+mOrCF4FwF5s7ThEI/KaZp7JdleOU0z0ukj0kFzryTbMyiaeyXZXjlN85N5zjw090qyfeahuVeS7ZXTNPdKsr1ymuZeSbZXTtPcK8n2OEEz0ukj5TTNSKePeBL9/pipBVvp98dMPeqyf3rM1B1qf3zM1JJAae6VZHvsprlXku2V0zT3SrK9cprmXkm2V07TTjo9+YgHegVU3+IUfftKsleMgHaU4JR4eq+dpjnx9F47vWVH5ox4GtCJihcLX3IAb0UF2wrxu8ng/zq7CvIKLgxALRnuV1CRNrBkXqBWQxEMZzfx9F47TS9eSaa40Z9fuhFqtW5sXgE44d8IC9MbimlcGxDKXfc4TDZArWLBCQoXYLV+I552QyGG69gabS+JpXJso1ylQUFNCP6iONQKslBg0R3z38ZQBEdDGMO7XeC3DQ8BaoEHZtl94m7/kl3QRTSJ2gYjEh5YB7bKOqAEJ8BFdArR5IjisDZXe5TP0ukj5TTNSKePlNM0I50+uplHb+/mfSGtpBnp9JFymmak00fKaZqRTh8pp2lGOn1kCpqRTh/5Ps1Ip4+U0zQjnT5STtOMdPpIOU0z0ukjr6ffn8K6HEm/PoX1VuzTjHT6SDlNM9Lpo/CmGen0kXKaZqTTR8ppmpFOHymnaUY6faScphnp9NH2C81Ip49unNOMdPpIOf37o+bWWKAZ6fSRcvroHb4fpdNHymmakU4fKadpRjp9pJyml9Jp+15mdiQ7u+TP4YmO5NMI195AMoJGmkGEoQjqsL7xrXreviUQ4Mj9cU2hMkou5ywyv2kHR3Cu5SdNIvtGZtXRyoh6CUHjPKrrkIoF6wFElNoqskjJ1bPdZETORjWMlSjRj6G9kU9v1dM0K5/eqqfp4JVkfnQ8cJMi9yKOF5Ewoxs9iXF03snRKcFNj3GopyW/qITFyW5or7kZT5+VT2/V0zQrn96qp2lWPr1VT9OsfHorlKNZ+fRzT2cBXa/8sCRgSlMNhUgJ/OavYEF0HWpHfkgSqkjrVEfRYRHbARGL7BNssY4fu3QbN83Kp7fN5/RePl1LBnuKOiHhMQAmxBdL0AoWXKOK05H3rwLHWkS604KBPqE8yx7Mp/fw/avUaFY+PcYbFYYF4wrhKXD9llBfmsw7KPzaQi4jPYCTq2bkbH6ubOWbqjbglywq36NXqdGsfHqrCaY/+TTLuL+QT28Rg94t8Q0xz7xKjWbl0wOSH9TTNCuftpab9O+WolfyaQFWm3xnfRe3n3iWwCfu8DaYQ2m9oqDqjJoGtCwHjEiEhFI0W354KsrUs/Jphtxo77aj7fp8IT1/0kTTM6zfT3XqVWoPolh+AZdYYPSdeFp283DckXKa3kunz2uQaStCntUg0yy0bpGVvoTWl2+u41UbPuz4SQwf1Or26chnk9/vrn+tVn9WHdO8Wv1ZdUzzavVn1fFSsfm2febA16pjer/oa+j4fA+dF6rjpQPhvOo4rJ4+LmY6kGjVHdOfnu5Id6zO645XmceB7jh/pzumX7V9q64FUHvyZXbv32X32MT8o+6YrpnYoju6YGIPmfZX3TEt4tvfdcf0ae5np06f5n526iTj+7mf1R3Tt8v8aqr07TK/mirttKmTumPuG4n/Pz37k+6Ytg9FmA1hmvPj/URpzo/3Slt6LbXdC0zHUS+mSteE7Hh5whk//uHhLt+qj+kXLfb/5PKf02I/smH6RYv9aAz6RYv9aAz6NervFOIHLfbId6vOjbY+9PkhBcdYQe8j6HwA0RX2+bwT8bJI3aHnfv/oW836zSD0e2pcDEJzFtkbhN55zHvNun9SH9PNiIYHXsaGweCT4y7WztRmN5ol8lCNXONFXERc4kW8pTHhRazReQqVJR09Wmf7VKNDciGOFoG2Tw6YfXAAXeGMbE36bNgN44+851uDsvw0ejDSwr2rvVEN1Yz+jWZ0E9zl0FLQnaknrt161bXys+g/PTjg96fErBOnK6q1N0+JebZLD6oaZ6rBBX0KcDdlWfraY1RZi866SWr8/NWipcv8iAWbaiuYaJONt+debW/IzW7SeITqxnfpvwGu21vodiPItwAAAS9JREFUKM9lkGdXwyAUhqEEclslJJa4t1bc1j1w771Hq/7/3+ENdBh9Tj5wuE/ey3kJoQShhSbMfYgf4MgLrMBYgPCA8yBg6BCSF4QIAaBYKhWhozOUokBJDsEiBRAnSiVd5bKKmMjPiZQaIFXdPb19qn8ABqXEBB/u96CQxGpoeGR0bHxisjIlpaGUttZQI6ROYXpmdm5+YXGpDLoq8gmZsKxWVtfWNza3tpMdXbWU+ATqMLyqQ9jd2z84PDo+SYraclxhMsM403CrY3V6dn5xeXUNMaBAG29wbzFOgJvbu/uHx6c0rWQJSCvBCaF6fnlVCusAaApZgqHZEYU3eP8Ia7Xwn+AILDaJNYJDRZmAf/4S6vYTviI/h29eD/x9W+Bc8BZ49EK7Ssv/YBtF/wAiZiZaBF2hMAAAAABJRU5ErkJggg==" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAARCAMAAACLgl7OAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAEXUExURfX3+fT3+fX4+vX4+fb5+vf5+vb4+vv8/f7+/vz+/vr9/v79/P79/fb4+fr7/P////z9/v///v7+/f7///z8/f3+/tb3/Ivn94vt+tb8/f3u1/7v3vz8/JPa8gCZ2gua2gqk3gC877Lt6/+wbPvcyP/+/vz7+/T4+dzv+gF/0F6Z1f/5+//7/ZfJ5cC9qPDr5Pf4+fv9/qvU8QBWu9Le7pXG4ZDB273Fy0m+4aLx//v+/vf4+p3B6BhjvW6k1rjY77nX6m/D6gCp6cfv+cHQ6jV2xiWD1GG16lO57QCV4mPC7MfV7AVRujR6yEuU11Gf3qHN7v/9/p234QAqndzh7f39/tDb7p602vr8/ff5+/v7/Pz9/fv8/MPXTp0AAAABYktHRA8YugDZAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH6goGCBUzkqYDgwAAAL9JREFUKM9lkGdXwyAUhqEEclslJJa4t1bc1j1w771Hq/7/3+ENdBh9Tj5wuE/ey3kJoQShhSbMfYgf4MgLrMBYgPCA8yBg6BCSF4QIAaBYKhWhozOUokBJDsEiBRAnSiVd5bKKmMjPiZQaIFXdPb19qn8ABqXEBB/u96CQxGpoeGR0bHxisjIlpaGUttZQI6ROYXpmdm5+YXGpDLoq8gmZsKxWVtfWNza3tpMdXbWU+ATqMLyqQ9jd2z84PDo+SYraclxhMsM403CrY3V6dn5xeXUNMaBAG29wbzFOgJvbu/uHx6c0rWQJSCvBCaF6fnlVCusAaApZgqHZEYU3eP8Ia7Xwn+AILDaJNYJDRZmAf/4S6vYTviI/h29eD/x9W+Bc8BZ49EK7Ssv/YBtF/wAiZiZaBF2hMAAAAABJRU5ErkJggg==" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-main: #F5F6FA;
+      --bg-card: #ffffff;
+      --bg-secondary: #F7FAFC;
+      --bg-input: #F7FAFC;
+      --bg-column: #EDF2F7;
+      --bg-hover: #F0F4F8;
+      --text-primary: #1A202C;
+      --text-secondary: #718096;
+      --text-muted: #A0AEC0;
+      --text-subtle: #CBD5E0;
+      --border: #E2E8F0;
+      --border-light: #EDF2F7;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-card-hover: 0 4px 14px rgba(0,0,0,0.08);
+      --shadow-modal: 0 4px 24px rgba(0,0,0,0.08);
+      --modal-overlay: rgba(0,0,0,0.45);
+      --accent: #6C7AE0;
+      --accent-bg: #EBF4FF;
+      --danger: #E53E3E;
+      --danger-bg: #FFF5F5;
+      --danger-border: #FED7D7;
+      --success: #48BB78;
+      --success-bg: #C6F6D5;
+      --warning: #ECC94B;
+      --priority-bg: linear-gradient(135deg, #FF6B6B, #EE5A24);
+      --priority-badge-bg: #FFF5F5;
+      --priority-badge-color: #C53030;
+      --priority-badge-border: #FC8181;
+      --normal-badge-bg: #EBF8FF;
+      --normal-badge-color: #2B6CB0;
+    }
+    [data-theme="dark"] {
+      --bg-main: #0F1117;
+      --bg-card: #1A1D2E;
+      --bg-secondary: #242738;
+      --bg-input: #2D3148;
+      --bg-column: #1E2132;
+      --bg-hover: #2D3148;
+      --text-primary: #E2E8F0;
+      --text-secondary: #A0AEC0;
+      --text-muted: #718096;
+      --text-subtle: #4A5568;
+      --border: #2D3748;
+      --border-light: #2D3748;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.2);
+      --shadow-card-hover: 0 4px 14px rgba(0,0,0,0.3);
+      --shadow-modal: 0 4px 24px rgba(0,0,0,0.4);
+      --modal-overlay: rgba(0,0,0,0.7);
+      --accent: #7C8CF0;
+      --accent-bg: #2D3356;
+      --danger: #FC8181;
+      --danger-bg: #2D1F1F;
+      --danger-border: #63171B;
+      --success: #68D391;
+      --success-bg: #1C3D2E;
+      --warning: #F6E05E;
+      --priority-badge-bg: #3D2020;
+      --priority-badge-color: #FC8181;
+      --priority-badge-border: #9B2C2C;
+      --normal-badge-bg: #1A2F4A;
+      --normal-badge-color: #63B3ED;
+    }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+    body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg-main); transition:background .3s,color .3s; }
     input,select,textarea,button { font-family:inherit; }
     ::-webkit-scrollbar { width:6px; height:6px; }
-    ::-webkit-scrollbar-track { background:#F5F6FA; }
-    ::-webkit-scrollbar-thumb { background:#CBD5E0; border-radius:3px; }
+    ::-webkit-scrollbar-track { background:var(--bg-main); }
+    ::-webkit-scrollbar-thumb { background:var(--text-subtle); border-radius:3px; }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -71,17 +134,14 @@ const DB = {
     return (data || []).map(d => ({ id: d.id, name: d.name }));
   },
   async saveDivisions(divNames) {
-    // Get current
     const { data: current } = await sb.from('divisions').select('*');
     const existing = current || [];
     const existingNames = existing.map(d => d.name.toLowerCase());
-    // Add new ones
     for (const name of divNames) {
       if (!existingNames.includes(name.toLowerCase())) {
         await sb.from('divisions').insert({ name, active: true });
       }
     }
-    // Deactivate removed ones
     for (const d of existing) {
       if (!divNames.some(n => n.toLowerCase() === d.name.toLowerCase())) {
         await sb.from('divisions').update({ active: false }).eq('id', d.id);
@@ -112,6 +172,7 @@ const DB = {
       start: p.start_date || '',
       deadline: p.deadline || '',
       summary: p.summary || '',
+      priority: p.priority || 'normal',
       milestones: msMap[p.id] || [],
       updated: p.updated_at ? new Date(p.updated_at).toLocaleDateString('id-ID', { day:'numeric', month:'short' }) : '',
       _manualPhase: p.manual_phase || null,
@@ -126,8 +187,8 @@ const DB = {
         phase: p.phase, health: p.health, progress: p.progress,
         start_date: p.start || null, deadline: p.deadline || null,
         summary: p.summary, manual_phase: p._manualPhase || null,
+        priority: p.priority || 'normal',
       }).eq('id', p._dbId);
-      // Sync milestones: delete old, insert new
       await sb.from('milestones').delete().eq('project_id', p._dbId);
       if (p.milestones.length > 0) {
         await sb.from('milestones').insert(p.milestones.map((m, i) => ({
@@ -141,6 +202,7 @@ const DB = {
         phase: p.phase, health: p.health, progress: p.progress,
         start_date: p.start || null, deadline: p.deadline || null,
         summary: p.summary, manual_phase: p._manualPhase || null,
+        priority: p.priority || 'normal',
         sort_order: 0,
       }).select().single();
       if (data) {
@@ -254,38 +316,65 @@ function autoCalc(p, manualPhase) {
   return { ...p, progress, health, phase, _manualPhase: manualPhase || p._manualPhase || null };
 }
 
-const inputStyle = { fontSize:13, padding:"8px 10px", borderRadius:8, border:"1.5px solid #E2E8F0", outline:"none", width:"100%", background:"#F7FAFC", boxSizing:"border-box" };
-const labelStyle = { fontSize:10, fontWeight:600, color:"#A0AEC0", marginBottom:3, display:"block", textTransform:"uppercase", letterSpacing:"0.03em" };
+const inputStyle = { fontSize:13, padding:"8px 10px", borderRadius:8, border:"1.5px solid var(--border)", outline:"none", width:"100%", background:"var(--bg-input)", color:"var(--text-primary)", boxSizing:"border-box" };
+const labelStyle = { fontSize:10, fontWeight:600, color:"var(--text-muted)", marginBottom:3, display:"block", textTransform:"uppercase", letterSpacing:"0.03em" };
+
+/* ── Priority Badge ── */
+function PriorityBadge({ priority, size }) {
+  if (priority === 'priority') {
+    return (
+      <span style={{
+        fontSize: size === 'sm' ? 9 : 11, fontWeight:700,
+        padding: size === 'sm' ? "1px 6px" : "2px 10px",
+        borderRadius:6,
+        background:"var(--priority-badge-bg)",
+        color:"var(--priority-badge-color)",
+        border:"1px solid var(--priority-badge-border)",
+        display:"inline-flex", alignItems:"center", gap:3,
+        whiteSpace:"nowrap",
+      }}>
+        🔥 Prioritas
+      </span>
+    );
+  }
+  return null;
+}
 
 function Card({ p, onClick, onDragStart, isAdmin }) {
   const h = H[p.health];
+  const isPriority = p.priority === 'priority';
   return (
     <div
       draggable={isAdmin}
       onDragStart={(e) => isAdmin && onDragStart(e, p.id)}
       onClick={()=>onClick(p)}
       style={{
-        background:"#fff", borderRadius:12, padding:"12px 14px", cursor: isAdmin ? "grab" : "pointer",
-        borderLeft:`4px solid ${h.border}`, marginBottom:8,
-        boxShadow:"0 1px 3px rgba(0,0,0,0.04)", transition:"box-shadow .15s, transform .15s",
+        background:"var(--bg-card)", borderRadius:12, padding:"12px 14px", cursor: isAdmin ? "grab" : "pointer",
+        borderLeft: isPriority ? `4px solid #E53E3E` : `4px solid ${h.border}`, marginBottom:8,
+        boxShadow: isPriority ? "0 2px 8px rgba(229,62,62,0.15)" : "var(--shadow-card)",
+        transition:"box-shadow .15s, transform .15s",
+        position:"relative",
       }}
-      onMouseEnter={e=>{ e.currentTarget.style.boxShadow="0 4px 14px rgba(0,0,0,0.08)"; e.currentTarget.style.transform="translateY(-1px)"; }}
-      onMouseLeave={e=>{ e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,0.04)"; e.currentTarget.style.transform="translateY(0)"; }}
+      onMouseEnter={e=>{ e.currentTarget.style.boxShadow="var(--shadow-card-hover)"; e.currentTarget.style.transform="translateY(-1px)"; }}
+      onMouseLeave={e=>{ e.currentTarget.style.boxShadow= isPriority ? "0 2px 8px rgba(229,62,62,0.15)" : "var(--shadow-card)"; e.currentTarget.style.transform="translateY(0)"; }}
     >
-      <div style={{ fontSize:13.5, fontWeight:700, color:"#1A202C", marginBottom:2 }}>{p.div}</div>
+      <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", gap:4, marginBottom:2 }}>
+        <div style={{ fontSize:13.5, fontWeight:700, color:"var(--text-primary)" }}>{p.div}</div>
+        {isPriority && <PriorityBadge priority="priority" size="sm" />}
+      </div>
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", gap:8, marginBottom:6 }}>
-        <span style={{ fontSize:13.5, fontWeight:700, color:"#1A202C", lineHeight:1.3, flex:1 }}>{p.name}</span>
+        <span style={{ fontSize:13.5, fontWeight:700, color:"var(--text-primary)", lineHeight:1.3, flex:1 }}>{p.name}</span>
         <span style={{ fontSize:10, fontWeight:700, padding:"2px 8px", borderRadius:6, background:h.bg, color:h.c, whiteSpace:"nowrap" }}>{h.e} {h.l}</span>
       </div>
-      <div style={{ fontSize:11, color:"#718096", marginBottom:8, display:"flex", alignItems:"center", gap:4, flexWrap:"wrap" }}>
+      <div style={{ fontSize:11, color:"var(--text-secondary)", marginBottom:8, display:"flex", alignItems:"center", gap:4, flexWrap:"wrap" }}>
         <span>📅 {p.start} — {p.deadline}</span>
       </div>
       <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
-        <div style={{ flex:1, height:5, borderRadius:3, background:"#EDF2F7", overflow:"hidden" }}>
+        <div style={{ flex:1, height:5, borderRadius:3, background:"var(--bg-column)", overflow:"hidden" }}>
           <div style={{ height:"100%", borderRadius:3, width:`${p.progress}%`, transition:"width .4s",
             background: p.progress>=80?"#48BB78":p.progress>=50?"#6C7AE0":p.progress>=25?"#ECC94B":"#E53E3E" }} />
         </div>
-        <span style={{ fontSize:11, fontWeight:700, color:"#2D3748", minWidth:28, textAlign:"right" }}>{p.progress}%</span>
+        <span style={{ fontSize:11, fontWeight:700, color:"var(--text-primary)", minWidth:28, textAlign:"right" }}>{p.progress}%</span>
       </div>
       <div style={{ display:"flex", gap:3, marginBottom:6 }}>
         {p.milestones.map((m,i) => {
@@ -297,8 +386,8 @@ function Card({ p, onClick, onDragStart, isAdmin }) {
         {p.milestones.map((m,i) => (
           <span key={i} style={{
             fontSize:9, padding:"2px 6px", borderRadius:4, display:"inline-flex", alignItems:"center", gap:2,
-            background: m.d ? "#C6F6D5" : "#EDF2F7",
-            color: m.d ? "#22543D" : "#A0AEC0",
+            background: m.d ? "#C6F6D5" : "var(--bg-column)",
+            color: m.d ? "#22543D" : "var(--text-muted)",
             fontWeight: 500,
           }}>
             {m.d ? "✓" : "○"} {m.l}
@@ -361,34 +450,37 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
   };
 
   return (
-    <div onClick={handleClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
-      <div onClick={e=>e.stopPropagation()} style={{ background:"#fff", borderRadius:18, maxWidth:520, width:"100%", maxHeight:"92vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
-        <button onClick={handleClose} style={{ position:"absolute", top:12, right:12, background:"#F7FAFC", border:"none", fontSize:14, cursor:"pointer", color:"#A0AEC0", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
+    <div onClick={handleClose} style={{ position:"fixed", inset:0, background:"var(--modal-overlay)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:"var(--bg-card)", borderRadius:18, maxWidth:520, width:"100%", maxHeight:"92vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
+        <button onClick={handleClose} style={{ position:"absolute", top:12, right:12, background:"var(--bg-secondary)", border:"none", fontSize:14, cursor:"pointer", color:"var(--text-muted)", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
 
         {!editing && (<>
-          <div style={{ fontSize:11, color:"#A0AEC0", marginBottom:2 }}>{p.div}</div>
-          <h2 style={{ fontSize:19, fontWeight:800, color:"#1A202C", margin:"0 0 12px" }}>{p.name}</h2>
+          <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:2 }}>
+            <span style={{ fontSize:11, color:"var(--text-muted)" }}>{p.div}</span>
+            <PriorityBadge priority={p.priority} size="sm" />
+          </div>
+          <h2 style={{ fontSize:19, fontWeight:800, color:"var(--text-primary)", margin:"0 0 12px" }}>{p.name}</h2>
 
           <div style={{ display:"flex", gap:8, marginBottom:14, flexWrap:"wrap" }}>
             <div style={{ background:h.bg, borderRadius:10, padding:"8px 14px", flex:"1 1 130px" }}>
               <div style={{ fontSize:9, color:h.c, opacity:.7, fontWeight:600 }}>STATUS</div>
               <div style={{ fontSize:14, fontWeight:700, color:h.c }}>{h.e} {h.l}</div>
             </div>
-            <div style={{ background:"#F7FAFC", borderRadius:10, padding:"8px 14px", flex:"1 1 130px" }}>
-              <div style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>PROGRESS</div>
+            <div style={{ background:"var(--bg-secondary)", borderRadius:10, padding:"8px 14px", flex:"1 1 130px" }}>
+              <div style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>PROGRESS</div>
               <div style={{ display:"flex", alignItems:"center", gap:6, marginTop:2 }}>
-                <div style={{ flex:1, height:7, borderRadius:4, background:"#EDF2F7", overflow:"hidden" }}>
+                <div style={{ flex:1, height:7, borderRadius:4, background:"var(--bg-column)", overflow:"hidden" }}>
                   <div style={{ height:"100%", borderRadius:4, width:`${p.progress}%`,
                     background: p.progress>=80?"#48BB78":p.progress>=50?"#6C7AE0":p.progress>=25?"#ECC94B":"#E53E3E" }} />
                 </div>
-                <span style={{ fontSize:14, fontWeight:800, color:"#1A202C" }}>{p.progress}%</span>
+                <span style={{ fontSize:14, fontWeight:800, color:"var(--text-primary)" }}>{p.progress}%</span>
               </div>
             </div>
           </div>
 
-          <div style={{ background:"#F7FAFC", borderRadius:10, padding:12, marginBottom:14, borderLeft:`3px solid ${h.border}` }}>
-            <div style={{ fontSize:9, color:"#A0AEC0", fontWeight:600, marginBottom:3 }}>SITUASI TERKINI</div>
-            <p style={{ fontSize:13, color:"#2D3748", lineHeight:1.55, margin:0 }}>{p.summary}</p>
+          <div style={{ background:"var(--bg-secondary)", borderRadius:10, padding:12, marginBottom:14, borderLeft:`3px solid ${h.border}` }}>
+            <div style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600, marginBottom:3 }}>SITUASI TERKINI</div>
+            <p style={{ fontSize:13, color:"var(--text-primary)", lineHeight:1.55, margin:0 }}>{p.summary}</p>
           </div>
 
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:14 }}>
@@ -396,31 +488,31 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
               {i:"📅",l:"Mulai",v:p.start},
               {i:"🏁",l:"Target Selesai",v:p.deadline},
             ].map(x=>(
-              <div key={x.l} style={{ background:"#FAFBFC", borderRadius:8, padding:"7px 10px" }}>
-                <div style={{ fontSize:9, color:"#A0AEC0" }}>{x.i} {x.l}</div>
-                <div style={{ fontSize:13, fontWeight:700, color:"#1A202C" }}>{x.v}</div>
+              <div key={x.l} style={{ background:"var(--bg-secondary)", borderRadius:8, padding:"7px 10px" }}>
+                <div style={{ fontSize:9, color:"var(--text-muted)" }}>{x.i} {x.l}</div>
+                <div style={{ fontSize:13, fontWeight:700, color:"var(--text-primary)" }}>{x.v}</div>
               </div>
             ))}
           </div>
 
           <div style={{ marginBottom:16 }}>
-            <div style={{ fontSize:10, fontWeight:600, color:"#2D3748", marginBottom:6 }}>Tahapan ({doneMil}/{p.milestones.length} selesai)</div>
+            <div style={{ fontSize:10, fontWeight:600, color:"var(--text-primary)", marginBottom:6 }}>Tahapan ({doneMil}/{p.milestones.length} selesai)</div>
             <div style={{ display:"flex", gap:3, marginBottom:10 }}>
               {p.milestones.map((m,i)=>{ const mh=calcMilestoneHealth(m); return <div key={i} style={{ flex:1, height:5, borderRadius:3, background:MS_COLORS[mh] }} />; })}
             </div>
             {p.milestones.map((m,i)=>{
               const mh = calcMilestoneHealth(m);
               const rem = milestoneRemaining(m);
-              const remColor = mh==="done"?"#48BB78":mh==="delayed"?"#E53E3E":mh==="at_risk"?"#D69E2E":"#718096";
+              const remColor = mh==="done"?"#48BB78":mh==="delayed"?"#E53E3E":mh==="at_risk"?"#D69E2E":"var(--text-secondary)";
               return (
-                <div key={i} style={{ padding:"8px 0", borderBottom: i<p.milestones.length-1?"1px solid #F5F5F5":"none" }}>
+                <div key={i} style={{ padding:"8px 0", borderBottom: i<p.milestones.length-1?"1px solid var(--border-light)":"none" }}>
                   <div style={{ display:"flex", alignItems:"center", gap:8 }}>
                     <span style={{ width:20, height:20, borderRadius:"50%", background:MS_COLORS[mh], display:"flex", alignItems:"center", justifyContent:"center", fontSize:9, fontWeight:800, color:"#fff", flexShrink:0 }}>{m.d?"✓":i+1}</span>
-                    <span style={{ fontSize:12, fontWeight:600, color:m.d?"#48BB78":"#2D3748", flex:1 }}>{m.l}</span>
+                    <span style={{ fontSize:12, fontWeight:600, color:m.d?"#48BB78":"var(--text-primary)", flex:1 }}>{m.l}</span>
                     <span style={{ fontSize:10, fontWeight:600, color:remColor }}>{rem}</span>
                   </div>
                   {(m.s || m.e) && (
-                    <div style={{ fontSize:10, color:"#A0AEC0", marginLeft:28, marginTop:2 }}>
+                    <div style={{ fontSize:10, color:"var(--text-muted)", marginLeft:28, marginTop:2 }}>
                       📅 {m.s || "?"} — {m.e || "?"}
                     </div>
                   )}
@@ -429,11 +521,11 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
             })}
           </div>
 
-          <div style={{ fontSize:10, color:"#CBD5E0", marginBottom:14 }}>Update: {p.updated}</div>
+          <div style={{ fontSize:10, color:"var(--text-subtle)", marginBottom:14 }}>Update: {p.updated}</div>
 
           {isAdmin && (
             <div style={{ marginBottom:10 }}>
-              <div style={{ fontSize:10, fontWeight:600, color:"#A0AEC0", marginBottom:6 }}>PINDAHKAN KE</div>
+              <div style={{ fontSize:10, fontWeight:600, color:"var(--text-muted)", marginBottom:6 }}>PINDAHKAN KE</div>
               <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
                 {PHASES.map(ph => {
                   const isCurrent = p.phase === ph.id;
@@ -442,9 +534,9 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
                       disabled={isCurrent}
                       style={{
                         flex:1, minWidth:80, padding:"8px 6px", borderRadius:8, cursor: isCurrent?"default":"pointer",
-                        border: isCurrent ? "1.5px solid #6C7AE0" : "1.5px solid #E2E8F0",
-                        background: isCurrent ? "#EBF4FF" : "#fff",
-                        color: isCurrent ? "#6C7AE0" : "#4A5568",
+                        border: isCurrent ? "1.5px solid var(--accent)" : "1.5px solid var(--border)",
+                        background: isCurrent ? "var(--accent-bg)" : "var(--bg-card)",
+                        color: isCurrent ? "var(--accent)" : "var(--text-secondary)",
                         fontSize:11, fontWeight:600, opacity: isCurrent ? 1 : 0.85,
                         transition:"all .15s",
                       }}>
@@ -458,20 +550,20 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
 
           {isAdmin && (
             <div style={{ display:"flex", gap:8 }}>
-              <button onClick={()=>setEditing(true)} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#6C7AE0", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>✏️ Edit Project</button>
-              <button onClick={()=>setConfirmDelete(true)} style={{ padding:"10px 16px", borderRadius:10, border:"1.5px solid #FED7D7", background:"#FFF5F5", color:"#E53E3E", fontSize:13, fontWeight:600, cursor:"pointer" }}>🗑️</button>
+              <button onClick={()=>setEditing(true)} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--accent)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>✏️ Edit Project</button>
+              <button onClick={()=>setConfirmDelete(true)} style={{ padding:"10px 16px", borderRadius:10, border:"1.5px solid var(--danger-border)", background:"var(--danger-bg)", color:"var(--danger)", fontSize:13, fontWeight:600, cursor:"pointer" }}>🗑️</button>
             </div>
           )}
 
           {confirmDelete && (
             <div style={{ position:"absolute", inset:0, background:"rgba(255,255,255,0.92)", borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", zIndex:10 }}>
-              <div style={{ background:"#fff", borderRadius:14, padding:"24px 20px", boxShadow:"0 4px 20px rgba(0,0,0,0.12)", maxWidth:300, width:"100%", textAlign:"center" }}>
+              <div style={{ background:"var(--bg-card)", borderRadius:14, padding:"24px 20px", boxShadow:"0 4px 20px rgba(0,0,0,0.12)", maxWidth:300, width:"100%", textAlign:"center" }}>
                 <div style={{ fontSize:28, marginBottom:8 }}>🗑️</div>
-                <div style={{ fontSize:14, fontWeight:700, color:"#1A202C", marginBottom:4 }}>Hapus Project</div>
-                <div style={{ fontSize:12, color:"#718096", marginBottom:16 }}>Yakin ingin menghapus project "{p.name}"?</div>
+                <div style={{ fontSize:14, fontWeight:700, color:"var(--text-primary)", marginBottom:4 }}>Hapus Project</div>
+                <div style={{ fontSize:12, color:"var(--text-secondary)", marginBottom:16 }}>Yakin ingin menghapus project "{p.name}"?</div>
                 <div style={{ display:"flex", gap:8 }}>
-                  <button onClick={()=>{onDelete(p.id);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#E53E3E", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Ya, Hapus</button>
-                  <button onClick={()=>setConfirmDelete(false)} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
+                  <button onClick={()=>{onDelete(p.id);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--danger)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Ya, Hapus</button>
+                  <button onClick={()=>setConfirmDelete(false)} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
                 </div>
               </div>
             </div>
@@ -479,7 +571,7 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
         </>)}
 
         {editing && (<>
-          <h2 style={{ fontSize:17, fontWeight:800, color:"#1A202C", margin:"0 0 16px" }}>✏️ Edit Project</h2>
+          <h2 style={{ fontSize:17, fontWeight:800, color:"var(--text-primary)", margin:"0 0 16px" }}>✏️ Edit Project</h2>
 
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:10 }}>
             <div style={{ gridColumn:"1/-1" }}>
@@ -500,6 +592,23 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
               <label style={labelStyle}>Deadline</label>
               <input type="date" value={form.deadline} onChange={e=>set("deadline",e.target.value)} style={inputStyle} />
             </div>
+            <div style={{ gridColumn:"1/-1" }}>
+              <label style={labelStyle}>Prioritas</label>
+              <div style={{ display:"flex", gap:8 }}>
+                <button type="button" onClick={()=>set("priority","priority")} style={{
+                  flex:1, padding:"8px 12px", borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer",
+                  border: form.priority==="priority" ? "2px solid #E53E3E" : "1.5px solid var(--border)",
+                  background: form.priority==="priority" ? "var(--priority-badge-bg)" : "var(--bg-card)",
+                  color: form.priority==="priority" ? "var(--priority-badge-color)" : "var(--text-secondary)",
+                }}>🔥 Prioritas</button>
+                <button type="button" onClick={()=>set("priority","normal")} style={{
+                  flex:1, padding:"8px 12px", borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer",
+                  border: form.priority==="normal" ? "2px solid var(--accent)" : "1.5px solid var(--border)",
+                  background: form.priority==="normal" ? "var(--accent-bg)" : "var(--bg-card)",
+                  color: form.priority==="normal" ? "var(--accent)" : "var(--text-secondary)",
+                }}>📁 Reguler</button>
+              </div>
+            </div>
           </div>
 
           {(() => {
@@ -512,13 +621,13 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
                   <div style={{ fontSize:9, color:hp.c, opacity:.7, fontWeight:600 }}>STATUS (otomatis)</div>
                   <div style={{ fontSize:13, fontWeight:700, color:hp.c }}>{hp.e} {hp.l}</div>
                 </div>
-                <div style={{ flex:"1 1 130px", background:"#F7FAFC", borderRadius:8, padding:"8px 12px" }}>
-                  <div style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>PROGRESS (otomatis)</div>
-                  <div style={{ fontSize:13, fontWeight:700, color:"#1A202C" }}>{preview.progress}%</div>
+                <div style={{ flex:"1 1 130px", background:"var(--bg-secondary)", borderRadius:8, padding:"8px 12px" }}>
+                  <div style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>PROGRESS (otomatis)</div>
+                  <div style={{ fontSize:13, fontWeight:700, color:"var(--text-primary)" }}>{preview.progress}%</div>
                 </div>
-                <div style={{ flex:"1 1 130px", background:"#F7FAFC", borderRadius:8, padding:"8px 12px" }}>
-                  <div style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>FASE (otomatis)</div>
-                  <div style={{ fontSize:13, fontWeight:700, color:"#1A202C" }}>{php?.l || preview.phase}</div>
+                <div style={{ flex:"1 1 130px", background:"var(--bg-secondary)", borderRadius:8, padding:"8px 12px" }}>
+                  <div style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>FASE (otomatis)</div>
+                  <div style={{ fontSize:13, fontWeight:700, color:"var(--text-primary)" }}>{php?.l || preview.phase}</div>
                 </div>
               </div>
             );
@@ -544,7 +653,7 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
               const mh = calcMilestoneHealth(m);
               const rem = milestoneRemaining(m);
               return (
-                <div key={i} style={{ marginBottom:10, padding:"10px 12px", background:"#FAFBFC", borderRadius:10, borderLeft:`3px solid ${MS_COLORS[mh]}` }}>
+                <div key={i} style={{ marginBottom:10, padding:"10px 12px", background:"var(--bg-secondary)", borderRadius:10, borderLeft:`3px solid ${MS_COLORS[mh]}` }}>
                   <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:6 }}>
                     <button onClick={()=>toggleMilestone(i)} style={{
                       width:24, height:24, borderRadius:"50%", border:"none", cursor:"pointer", flexShrink:0,
@@ -554,7 +663,7 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
                     <input value={m.l} onChange={e=>updateMilestoneField(i,"l",e.target.value)} placeholder={`Tahap ${i+1}`}
                       style={{...inputStyle, flex:1, padding:"6px 8px", fontSize:12}} />
                     <span style={{ fontSize:9, fontWeight:600, color: mh==="done"?"#48BB78":mh==="delayed"?"#E53E3E":mh==="at_risk"?"#D69E2E":"#6C7AE0", whiteSpace:"nowrap" }}>{rem}</span>
-                    <button onClick={()=>removeMilestone(i)} style={{ background:"none", border:"none", cursor:"pointer", color:"#E53E3E", fontSize:14, padding:4 }}>✕</button>
+                    <button onClick={()=>removeMilestone(i)} style={{ background:"none", border:"none", cursor:"pointer", color:"var(--danger)", fontSize:14, padding:4 }}>✕</button>
                   </div>
                   <div style={{ display:"flex", gap:6, marginLeft:30 }}>
                     <input type="date" value={m.s||""} onChange={e=>updateMilestoneField(i,"s",e.target.value)}
@@ -566,28 +675,28 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
               );
             })}
             {form.milestones.length < 8 && (
-              <button onClick={addMilestone} style={{ fontSize:12, color:"#6C7AE0", background:"none", border:"1.5px dashed #CBD5E0", borderRadius:8, padding:"6px 12px", cursor:"pointer", width:"100%", fontWeight:600 }}>
+              <button onClick={addMilestone} style={{ fontSize:12, color:"var(--accent)", background:"none", border:"1.5px dashed var(--text-subtle)", borderRadius:8, padding:"6px 12px", cursor:"pointer", width:"100%", fontWeight:600 }}>
                 + Tambah Tahapan
               </button>
             )}
           </div>
 
           <div style={{ display:"flex", gap:8 }}>
-            <button onClick={handleSave} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#48BB78", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>💾 Simpan</button>
-            <button onClick={handleCancel} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
+            <button onClick={handleSave} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--success)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>💾 Simpan</button>
+            <button onClick={handleCancel} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
           </div>
         </>)}
 
         {showSaveConfirm && (
           <div style={{ position:"absolute", inset:0, background:"rgba(255,255,255,0.92)", borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", zIndex:10 }}>
-            <div style={{ background:"#fff", borderRadius:14, padding:"24px 20px", boxShadow:"0 4px 20px rgba(0,0,0,0.12)", maxWidth:320, width:"100%", textAlign:"center" }}>
+            <div style={{ background:"var(--bg-card)", borderRadius:14, padding:"24px 20px", boxShadow:"0 4px 20px rgba(0,0,0,0.12)", maxWidth:320, width:"100%", textAlign:"center" }}>
               <div style={{ fontSize:28, marginBottom:8 }}>💾</div>
-              <div style={{ fontSize:14, fontWeight:700, color:"#1A202C", marginBottom:4 }}>Ada perubahan belum disimpan</div>
-              <div style={{ fontSize:12, color:"#718096", marginBottom:16 }}>Simpan perubahan sebelum keluar?</div>
+              <div style={{ fontSize:14, fontWeight:700, color:"var(--text-primary)", marginBottom:4 }}>Ada perubahan belum disimpan</div>
+              <div style={{ fontSize:12, color:"var(--text-secondary)", marginBottom:16 }}>Simpan perubahan sebelum keluar?</div>
               <div style={{ display:"flex", gap:8 }}>
-                <button onClick={()=>{onSave(form);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#48BB78", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Simpan</button>
-                <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Buang</button>
-                <button onClick={()=>setShowSaveConfirm(false)} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Kembali</button>
+                <button onClick={()=>{onSave(form);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--success)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Simpan</button>
+                <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Buang</button>
+                <button onClick={()=>setShowSaveConfirm(false)} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Kembali</button>
               </div>
             </div>
           </div>
@@ -601,7 +710,7 @@ function Modal({ p, onClose, onSave, onDelete, onMove, isAdmin, divs, startInEdi
 /* ── Add Project Modal ── */
 function AddModal({ phase, onClose, onAdd, divs }) {
   const [form, setForm] = useState({
-    name:"", div: divs[0] || "", start:"", deadline:"",
+    name:"", div: divs[0] || "", start:"", deadline:"", priority:"normal",
     milestones:[{l:"Tahap 1",d:false,s:"",e:""},{l:"Tahap 2",d:false,s:"",e:""},{l:"Tahap 3",d:false,s:"",e:""},{l:"Tahap 4",d:false,s:"",e:""}],
     summary:"", updated: new Date().toLocaleDateString("id-ID",{day:"numeric",month:"short"}),
   });
@@ -612,10 +721,10 @@ function AddModal({ phase, onClose, onAdd, divs }) {
     onClose();
   };
   return (
-    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
-      <div onClick={e=>e.stopPropagation()} style={{ background:"#fff", borderRadius:18, maxWidth:480, width:"100%", maxHeight:"90vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
-        <button onClick={onClose} style={{ position:"absolute", top:12, right:12, background:"#F7FAFC", border:"none", fontSize:14, cursor:"pointer", color:"#A0AEC0", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
-        <h2 style={{ fontSize:17, fontWeight:800, color:"#1A202C", margin:"0 0 16px" }}>➕ Tambah Project Baru</h2>
+    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"var(--modal-overlay)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:"var(--bg-card)", borderRadius:18, maxWidth:480, width:"100%", maxHeight:"90vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
+        <button onClick={onClose} style={{ position:"absolute", top:12, right:12, background:"var(--bg-secondary)", border:"none", fontSize:14, cursor:"pointer", color:"var(--text-muted)", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
+        <h2 style={{ fontSize:17, fontWeight:800, color:"var(--text-primary)", margin:"0 0 16px" }}>➕ Tambah Project Baru</h2>
 
         <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:10 }}>
           <div style={{ gridColumn:"1/-1" }}>
@@ -636,6 +745,23 @@ function AddModal({ phase, onClose, onAdd, divs }) {
             <label style={labelStyle}>Deadline</label>
             <input type="date" value={form.deadline} onChange={e=>set("deadline",e.target.value)} style={inputStyle} />
           </div>
+          <div style={{ gridColumn:"1/-1" }}>
+            <label style={labelStyle}>Prioritas</label>
+            <div style={{ display:"flex", gap:8 }}>
+              <button type="button" onClick={()=>set("priority","priority")} style={{
+                flex:1, padding:"8px 12px", borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer",
+                border: form.priority==="priority" ? "2px solid #E53E3E" : "1.5px solid var(--border)",
+                background: form.priority==="priority" ? "var(--priority-badge-bg)" : "var(--bg-card)",
+                color: form.priority==="priority" ? "var(--priority-badge-color)" : "var(--text-secondary)",
+              }}>🔥 Prioritas</button>
+              <button type="button" onClick={()=>set("priority","normal")} style={{
+                flex:1, padding:"8px 12px", borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer",
+                border: form.priority==="normal" ? "2px solid var(--accent)" : "1.5px solid var(--border)",
+                background: form.priority==="normal" ? "var(--accent-bg)" : "var(--bg-card)",
+                color: form.priority==="normal" ? "var(--accent)" : "var(--text-secondary)",
+              }}>📁 Reguler</button>
+            </div>
+          </div>
         </div>
 
         <div style={{ marginBottom:10 }}>
@@ -645,8 +771,8 @@ function AddModal({ phase, onClose, onAdd, divs }) {
         </div>
 
         <div style={{ display:"flex", gap:8 }}>
-          <button onClick={handleAdd} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#6C7AE0", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Tambah Project</button>
-          <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
+          <button onClick={handleAdd} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--accent)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Tambah Project</button>
+          <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
         </div>
       </div>
     </div>
@@ -674,34 +800,34 @@ function DivModal({ divs, onClose, onSave, projects }) {
   };
 
   return (
-    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
-      <div onClick={e=>e.stopPropagation()} style={{ background:"#fff", borderRadius:18, maxWidth:440, width:"100%", maxHeight:"90vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
-        <button onClick={onClose} style={{ position:"absolute", top:12, right:12, background:"#F7FAFC", border:"none", fontSize:14, cursor:"pointer", color:"#A0AEC0", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
-        <h2 style={{ fontSize:17, fontWeight:800, color:"#1A202C", margin:"0 0 16px" }}>🏢 Kelola Divisi</h2>
+    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"var(--modal-overlay)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:"var(--bg-card)", borderRadius:18, maxWidth:440, width:"100%", maxHeight:"90vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
+        <button onClick={onClose} style={{ position:"absolute", top:12, right:12, background:"var(--bg-secondary)", border:"none", fontSize:14, cursor:"pointer", color:"var(--text-muted)", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
+        <h2 style={{ fontSize:17, fontWeight:800, color:"var(--text-primary)", margin:"0 0 16px" }}>🏢 Kelola Divisi</h2>
 
         {list.map((d,i)=>{
           const inUse = usedDivs.has(d);
           return (
-            <div key={i} style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8, padding:"8px 10px", background:"#FAFBFC", borderRadius:10 }}>
+            <div key={i} style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8, padding:"8px 10px", background:"var(--bg-secondary)", borderRadius:10 }}>
               <input value={d} onChange={e=>handleEdit(i,e.target.value)} style={{...inputStyle, flex:1, padding:"6px 8px", fontSize:13}} />
               {inUse ? (
-                <span style={{ fontSize:9, color:"#A0AEC0", whiteSpace:"nowrap" }}>Dipakai</span>
+                <span style={{ fontSize:9, color:"var(--text-muted)", whiteSpace:"nowrap" }}>Dipakai</span>
               ) : (
-                <button onClick={()=>handleRemove(i)} style={{ background:"none", border:"none", cursor:"pointer", color:"#E53E3E", fontSize:14, padding:4 }}>✕</button>
+                <button onClick={()=>handleRemove(i)} style={{ background:"none", border:"none", cursor:"pointer", color:"var(--danger)", fontSize:14, padding:4 }}>✕</button>
               )}
             </div>
           );
         })}
 
-        <div style={{ display:"flex", alignItems:"center", gap:8, marginTop:12, padding:"10px", background:"#F7FAFC", borderRadius:10, border:"1.5px dashed #CBD5E0" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:8, marginTop:12, padding:"10px", background:"var(--bg-secondary)", borderRadius:10, border:"1.5px dashed var(--text-subtle)" }}>
           <input value={newName} onChange={e=>setNewName(e.target.value)} placeholder="Nama divisi baru..." style={{...inputStyle, flex:1, padding:"6px 8px", fontSize:13}}
             onKeyDown={e=>e.key==="Enter"&&handleAdd()} />
-          <button onClick={handleAdd} style={{ background:"#6C7AE0", border:"none", color:"#fff", borderRadius:8, padding:"6px 14px", fontSize:12, fontWeight:700, cursor:"pointer", whiteSpace:"nowrap" }}>+ Tambah</button>
+          <button onClick={handleAdd} style={{ background:"var(--accent)", border:"none", color:"#fff", borderRadius:8, padding:"6px 14px", fontSize:12, fontWeight:700, cursor:"pointer", whiteSpace:"nowrap" }}>+ Tambah</button>
         </div>
 
         <div style={{ display:"flex", gap:8, marginTop:16 }}>
-          <button onClick={()=>{onSave(list);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#48BB78", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>💾 Simpan</button>
-          <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
+          <button onClick={()=>{onSave(list);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--success)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>💾 Simpan</button>
+          <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Batal</button>
         </div>
       </div>
     </div>
@@ -717,10 +843,12 @@ const INIT_USERS = [
 function LoginScreen({ onLogin, onResetAdmin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState("");
   const [showReset, setShowReset] = useState(false);
   const [resetCode, setResetCode] = useState("");
   const [resetMsg, setResetMsg] = useState("");
+  const [darkMode, setDarkMode] = useState(() => document.documentElement.getAttribute('data-theme') === 'dark');
 
   const RECOVERY_CODE = "RESET2026";
 
@@ -747,13 +875,29 @@ function LoginScreen({ onLogin, onResetAdmin }) {
     }
   };
 
+  const toggleTheme = () => {
+    const next = !darkMode;
+    setDarkMode(next);
+    document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
+    try { localStorage.setItem('pantau-theme', next ? 'dark' : 'light'); } catch(e) {}
+  };
+
   return (
-    <div style={{ fontFamily:"'Inter',-apple-system,sans-serif", background:"#F5F6FA", minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center", padding:20 }}>
-      <div style={{ background:"#fff", borderRadius:20, padding:"40px 32px", maxWidth:380, width:"100%", boxShadow:"0 4px 24px rgba(0,0,0,0.08)" }}>
+    <div style={{ fontFamily:"'Inter',-apple-system,sans-serif", background:"var(--bg-main)", minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center", padding:20, transition:"background .3s" }}>
+      {/* Theme toggle on login */}
+      <button onClick={toggleTheme} style={{
+        position:"fixed", top:16, right:16, background:"var(--bg-card)", border:"1.5px solid var(--border)",
+        borderRadius:12, padding:"8px 14px", cursor:"pointer", fontSize:13, fontWeight:600, color:"var(--text-secondary)",
+        boxShadow:"var(--shadow-card)", display:"flex", alignItems:"center", gap:6, zIndex:100,
+      }}>
+        {darkMode ? "☀️ Light" : "🌙 Dark"}
+      </button>
+
+      <div style={{ background:"var(--bg-card)", borderRadius:20, padding:"40px 32px", maxWidth:380, width:"100%", boxShadow:"var(--shadow-modal)" }}>
         <div style={{ textAlign:"center", marginBottom:28 }}>
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAARCAMAAACLgl7OAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAEXUExURfX3+fT3+fX4+vX4+fb5+vf5+vb4+vv8/f7+/vz+/vr9/v79/P79/fb4+fr7/P////z9/v///v7+/f7///z8/f3+/tb3/Ivn94vt+tb8/f3u1/7v3vz8/JPa8gCZ2gua2gqk3gC877Lt6/+wbPvcyP/+/vz7+/T4+dzv+gF/0F6Z1f/5+//7/ZfJ5cC9qPDr5Pf4+fv9/qvU8QBWu9Le7pXG4ZDB273Fy0m+4aLx//v+/vf4+p3B6BhjvW6k1rjY77nX6m/D6gCp6cfv+cHQ6jV2xiWD1GG16lO57QCV4mPC7MfV7AVRujR6yEuU11Gf3qHN7v/9/p234QAqndzh7f39/tDb7p602vr8/ff5+/v7/Pz9/fv8/MPXTp0AAAABYktHRA8YugDZAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH6goGCBUzkqYDgwAAAL9JREFUKM9lkGdXwyAUhqEEclslJJa4t1bc1j1w771Hq/7/3+ENdBh9Tj5wuE/ey3kJoQShhSbMfYgf4MgLrMBYgPCA8yBg6BCSF4QIAaBYKhWhozOUokBJDsEiBRAnSiVd5bKKmMjPiZQaIFXdPb19qn8ABqXEBB/u96CQxGpoeGR0bHxisjIlpaGUttZQI6ROYXpmdm5+YXGpDLoq8gmZsKxWVtfWNza3tpMdXbWU+ATqMLyqQ9jd2z84PDo+SYraclxhMsM403CrY3V6dn5xeXUNMaBAG29wbzFOgJvbu/uHx6c0rWQJSCvBCaF6fnlVCusAaApZgqHZEYU3eP8Ia7Xwn+AILDaJNYJDRZmAf/4S6vYTviI/h29eD/x9W+Bc8BZ49EK7Ssv/YBtF/wAiZiZaBF2hMAAAAABJRU5ErkJggg==" style={{ width:48, height:48, marginBottom:8 }} />
-          <h1 style={{ fontSize:22, fontWeight:800, color:"#1A202C", margin:0 }}>Pantau Project</h1>
-          <p style={{ fontSize:13, color:"#A0AEC0", margin:"4px 0 0" }}>Masuk untuk melanjutkan</p>
+          <h1 style={{ fontSize:22, fontWeight:800, color:"var(--text-primary)", margin:0 }}>Pantau Project</h1>
+          <p style={{ fontSize:13, color:"var(--text-muted)", margin:"4px 0 0" }}>Masuk untuk melanjutkan</p>
         </div>
 
         {!showReset ? (<>
@@ -764,28 +908,37 @@ function LoginScreen({ onLogin, onResetAdmin }) {
           </div>
           <div style={{ marginBottom:14 }}>
             <label style={labelStyle}>Password</label>
-            <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Masukkan password"
-              style={inputStyle} onKeyDown={e=>e.key==="Enter"&&handleLogin()} />
+            <div style={{ position:"relative" }}>
+              <input type={showPw ? "text" : "password"} value={password} onChange={e=>setPassword(e.target.value)} placeholder="Masukkan password"
+                style={{...inputStyle, paddingRight:40}} onKeyDown={e=>e.key==="Enter"&&handleLogin()} />
+              <button type="button" onClick={()=>setShowPw(!showPw)} style={{
+                position:"absolute", right:6, top:"50%", transform:"translateY(-50%)",
+                background:"none", border:"none", cursor:"pointer", fontSize:16, color:"var(--text-muted)",
+                padding:"4px 6px", borderRadius:6, display:"flex", alignItems:"center",
+              }} title={showPw ? "Sembunyikan password" : "Tampilkan password"}>
+                {showPw ? "🙈" : "👁️"}
+              </button>
+            </div>
           </div>
-          {error && <div style={{ fontSize:12, color:"#E53E3E", marginBottom:12, textAlign:"center", fontWeight:600 }}>{error}</div>}
-          <button onClick={handleLogin} style={{ width:"100%", padding:"12px", borderRadius:10, border:"none", background:"#6C7AE0", color:"#fff", fontSize:14, fontWeight:700, cursor:"pointer", marginBottom:12 }}>Masuk</button>
+          {error && <div style={{ fontSize:12, color:"var(--danger)", marginBottom:12, textAlign:"center", fontWeight:600 }}>{error}</div>}
+          <button onClick={handleLogin} style={{ width:"100%", padding:"12px", borderRadius:10, border:"none", background:"var(--accent)", color:"#fff", fontSize:14, fontWeight:700, cursor:"pointer", marginBottom:12 }}>Masuk</button>
           <div style={{ textAlign:"center" }}>
-            <button onClick={()=>setShowReset(true)} style={{ background:"none", border:"none", fontSize:12, color:"#A0AEC0", cursor:"pointer", textDecoration:"underline" }}>Lupa password?</button>
+            <button onClick={()=>setShowReset(true)} style={{ background:"none", border:"none", fontSize:12, color:"var(--text-muted)", cursor:"pointer", textDecoration:"underline" }}>Lupa password?</button>
           </div>
         </>) : (<>
-          <div style={{ background:"#FFF5F5", borderRadius:10, padding:14, marginBottom:14, borderLeft:"3px solid #FED7D7" }}>
+          <div style={{ background:"var(--danger-bg)", borderRadius:10, padding:14, marginBottom:14, borderLeft:"3px solid var(--danger-border)" }}>
             <div style={{ fontSize:12, fontWeight:600, color:"#9B2C2C", marginBottom:4 }}>Reset Akun Admin</div>
-            <div style={{ fontSize:11, color:"#718096", lineHeight:1.5 }}>Masukkan kode recovery untuk mereset akun admin ke default. Hubungi IT jika tidak memiliki kode.</div>
+            <div style={{ fontSize:11, color:"var(--text-secondary)", lineHeight:1.5 }}>Masukkan kode recovery untuk mereset akun admin ke default. Hubungi IT jika tidak memiliki kode.</div>
           </div>
           <div style={{ marginBottom:14 }}>
             <label style={labelStyle}>Kode Recovery</label>
             <input value={resetCode} onChange={e=>setResetCode(e.target.value.toUpperCase())} placeholder="Masukkan kode recovery"
               style={inputStyle} onKeyDown={e=>e.key==="Enter"&&handleReset()} autoFocus />
           </div>
-          {resetMsg && <div style={{ fontSize:12, marginBottom:12, textAlign:"center", fontWeight:600, color: resetMsg.includes("Berhasil") ? "#48BB78" : "#E53E3E" }}>{resetMsg}</div>}
-          <button onClick={handleReset} style={{ width:"100%", padding:"12px", borderRadius:10, border:"none", background:"#E53E3E", color:"#fff", fontSize:14, fontWeight:700, cursor:"pointer", marginBottom:12 }}>Reset Admin</button>
+          {resetMsg && <div style={{ fontSize:12, marginBottom:12, textAlign:"center", fontWeight:600, color: resetMsg.includes("Berhasil") ? "var(--success)" : "var(--danger)" }}>{resetMsg}</div>}
+          <button onClick={handleReset} style={{ width:"100%", padding:"12px", borderRadius:10, border:"none", background:"var(--danger)", color:"#fff", fontSize:14, fontWeight:700, cursor:"pointer", marginBottom:12 }}>Reset Admin</button>
           <div style={{ textAlign:"center" }}>
-            <button onClick={()=>{setShowReset(false);setResetMsg("");}} style={{ background:"none", border:"none", fontSize:12, color:"#A0AEC0", cursor:"pointer", textDecoration:"underline" }}>Kembali ke login</button>
+            <button onClick={()=>{setShowReset(false);setResetMsg("");}} style={{ background:"none", border:"none", fontSize:12, color:"var(--text-muted)", cursor:"pointer", textDecoration:"underline" }}>Kembali ke login</button>
           </div>
         </>)}
       </div>
@@ -841,31 +994,31 @@ function UserModal({ users, onClose, onSave }) {
   const pagedList = filteredList.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
 
   return (
-    <div onClick={handleClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
-      <div onClick={e=>e.stopPropagation()} style={{ background:"#fff", borderRadius:18, maxWidth:520, width:"100%", maxHeight:"90vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
-        <button onClick={handleClose} style={{ position:"absolute", top:12, right:12, background:"#F7FAFC", border:"none", fontSize:14, cursor:"pointer", color:"#A0AEC0", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
-        <h2 style={{ fontSize:17, fontWeight:800, color:"#1A202C", margin:"0 0 12px" }}>👤 Kelola User</h2>
+    <div onClick={handleClose} style={{ position:"fixed", inset:0, background:"var(--modal-overlay)", display:"flex", alignItems:"center", justifyContent:"center", zIndex:200, padding:16 }}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:"var(--bg-card)", borderRadius:18, maxWidth:520, width:"100%", maxHeight:"90vh", overflow:"auto", padding:"26px 22px", position:"relative" }}>
+        <button onClick={handleClose} style={{ position:"absolute", top:12, right:12, background:"var(--bg-secondary)", border:"none", fontSize:14, cursor:"pointer", color:"var(--text-muted)", width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center" }}>✕</button>
+        <h2 style={{ fontSize:17, fontWeight:800, color:"var(--text-primary)", margin:"0 0 12px" }}>👤 Kelola User</h2>
 
-        <div style={{ marginBottom:14, padding:"12px", background:"#F7FAFC", borderRadius:10, border:"1.5px dashed #CBD5E0" }}>
-          <div style={{ fontSize:10, fontWeight:600, color:"#A0AEC0", marginBottom:8 }}>TAMBAH USER BARU</div>
+        <div style={{ marginBottom:14, padding:"12px", background:"var(--bg-secondary)", borderRadius:10, border:"1.5px dashed var(--text-subtle)" }}>
+          <div style={{ fontSize:10, fontWeight:600, color:"var(--text-muted)", marginBottom:8 }}>TAMBAH USER BARU</div>
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:8 }}>
             <div>
-              <label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>NAMA</label>
+              <label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>NAMA</label>
               <input value={newUser.name} onChange={e=>setNewUser(p=>({...p,name:e.target.value}))} placeholder="Nama" style={{...inputStyle, padding:"6px 8px", fontSize:12}} />
             </div>
             <div>
-              <label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>JENIS USER</label>
+              <label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>JENIS USER</label>
               <select value={newUser.role} onChange={e=>setNewUser(p=>({...p,role:e.target.value}))} style={{...inputStyle, padding:"6px 8px", fontSize:12}}>
                 <option value="viewer">👁️ Viewer</option>
                 <option value="admin">🔧 Admin</option>
               </select>
             </div>
             <div>
-              <label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>USERNAME *</label>
+              <label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>USERNAME *</label>
               <input value={newUser.username} onChange={e=>setNewUser(p=>({...p,username:e.target.value}))} placeholder="Username" style={{...inputStyle, padding:"6px 8px", fontSize:12}} />
             </div>
             <div>
-              <label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>PASSWORD *</label>
+              <label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>PASSWORD *</label>
               <input type="password" value={newUser.password} onChange={e=>setNewUser(p=>({...p,password:e.target.value}))} placeholder="Password" style={{...inputStyle, padding:"6px 8px", fontSize:12}} />
             </div>
           </div>
@@ -876,7 +1029,7 @@ function UserModal({ users, onClose, onSave }) {
             const updated = [...list, newU];
             onSave(updated);
             onClose();
-          }} style={{ width:"100%", background:"#48BB78", border:"none", color:"#fff", borderRadius:8, padding:"8px", fontSize:12, fontWeight:700, cursor:"pointer" }}>💾 Simpan</button>
+          }} style={{ width:"100%", background:"var(--success)", border:"none", color:"#fff", borderRadius:8, padding:"8px", fontSize:12, fontWeight:700, cursor:"pointer" }}>💾 Simpan</button>
         </div>
 
         <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:10 }}>
@@ -888,7 +1041,7 @@ function UserModal({ users, onClose, onSave }) {
             <option value="admin">🔧 Admin</option>
             <option value="viewer">👁️ Viewer</option>
           </select>
-          <span style={{ fontSize:11, color:"#A0AEC0", whiteSpace:"nowrap" }}>{filteredList.length} user</span>
+          <span style={{ fontSize:11, color:"var(--text-muted)", whiteSpace:"nowrap" }}>{filteredList.length} user</span>
         </div>
 
         {pagedList.map(u=>{
@@ -896,39 +1049,39 @@ function UserModal({ users, onClose, onSave }) {
           const isOnlyAdmin = u.role==="admin" && list.filter(x=>x.role==="admin").length<=1;
           const isOpen = expandedId === u.id;
           return (
-            <div key={u.id} style={{ marginBottom:6, borderRadius:10, border:`1.5px solid ${isOpen?"#6C7AE0":"#EDF2F7"}`, overflow:"hidden", opacity: u.active===false ? 0.55 : 1 }}>
+            <div key={u.id} style={{ marginBottom:6, borderRadius:10, border:`1.5px solid ${isOpen?"var(--accent)":"var(--border-light)"}`, overflow:"hidden", opacity: u.active===false ? 0.55 : 1 }}>
               <div onClick={()=>setExpandedId(isOpen?null:u.id)} style={{
                 display:"flex", alignItems:"center", gap:8, padding:"10px 12px", cursor:"pointer",
-                background: isOpen ? "#F7FAFC" : u.active===false ? "#FAFAFA" : "#fff",
+                background: isOpen ? "var(--bg-secondary)" : u.active===false ? "var(--bg-secondary)" : "var(--bg-card)",
               }}>
-                <span style={{ fontSize:11, fontWeight:700, padding:"2px 8px", borderRadius:6, background:u.role==="admin"?"#EBF4FF":"#EDF2F7", color:u.role==="admin"?"#6C7AE0":"#718096" }}>{u.role==="admin"?"🔧 Admin":"👁️ Viewer"}</span>
-                <span style={{ fontSize:13, fontWeight:600, color:"#1A202C", flex:1 }}>{u.name || u.username}</span>
-                {u.active===false && <span style={{ fontSize:9, fontWeight:600, padding:"2px 6px", borderRadius:4, background:"#FED7D7", color:"#9B2C2C" }}>Nonaktif</span>}
-                <span style={{ fontSize:11, color:"#A0AEC0" }}>@{u.username}</span>
-                <span style={{ fontSize:10, color:"#A0AEC0", transform:isOpen?"rotate(180deg)":"rotate(0)", transition:"transform .15s" }}>▼</span>
+                <span style={{ fontSize:11, fontWeight:700, padding:"2px 8px", borderRadius:6, background:u.role==="admin"?"var(--accent-bg)":"var(--bg-column)", color:u.role==="admin"?"var(--accent)":"var(--text-secondary)" }}>{u.role==="admin"?"🔧 Admin":"👁️ Viewer"}</span>
+                <span style={{ fontSize:13, fontWeight:600, color:"var(--text-primary)", flex:1 }}>{u.name || u.username}</span>
+                {u.active===false && <span style={{ fontSize:9, fontWeight:600, padding:"2px 6px", borderRadius:4, background:"var(--danger-border)", color:"#9B2C2C" }}>Nonaktif</span>}
+                <span style={{ fontSize:11, color:"var(--text-muted)" }}>@{u.username}</span>
+                <span style={{ fontSize:10, color:"var(--text-muted)", transform:isOpen?"rotate(180deg)":"rotate(0)", transition:"transform .15s" }}>▼</span>
               </div>
               {isOpen && (
-                <div style={{ padding:"10px 12px", borderTop:"1px solid #EDF2F7", background:"#FAFBFC" }}>
+                <div style={{ padding:"10px 12px", borderTop:"1px solid var(--border-light)", background:"var(--bg-secondary)" }}>
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:8 }}>
-                    <div><label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>NAMA</label>
+                    <div><label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>NAMA</label>
                       <input value={u.name} onChange={e=>handleEdit(i,"name",e.target.value)} style={{...inputStyle, padding:"5px 8px", fontSize:12}} /></div>
-                    <div><label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>JENIS USER</label>
+                    <div><label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>JENIS USER</label>
                       <select value={u.role} onChange={e=>handleEdit(i,"role",e.target.value)} style={{...inputStyle, padding:"5px 8px", fontSize:12}}>
                         <option value="admin">🔧 Admin</option><option value="viewer">👁️ Viewer</option>
                       </select></div>
-                    <div><label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>USERNAME</label>
+                    <div><label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>USERNAME</label>
                       <input value={u.username} onChange={e=>handleEdit(i,"username",e.target.value)} style={{...inputStyle, padding:"5px 8px", fontSize:12}} /></div>
-                    <div><label style={{ fontSize:9, color:"#A0AEC0", fontWeight:600 }}>PASSWORD</label>
+                    <div><label style={{ fontSize:9, color:"var(--text-muted)", fontWeight:600 }}>PASSWORD</label>
                       <div style={{ display:"flex", gap:4 }}>
                         <input type={showPw[i]?"text":"password"} value={u.password} onChange={e=>handleEdit(i,"password",e.target.value)} style={{...inputStyle, padding:"5px 8px", fontSize:12, flex:1}} />
-                        <button onClick={()=>setShowPw(prev=>({...prev,[i]:!prev[i]}))} style={{ background:"none", border:"1px solid #E2E8F0", borderRadius:6, padding:"2px 6px", cursor:"pointer", fontSize:11, color:"#A0AEC0" }}>{showPw[i]?"🙈":"👁️"}</button>
+                        <button onClick={()=>setShowPw(prev=>({...prev,[i]:!prev[i]}))} style={{ background:"none", border:"1px solid var(--border)", borderRadius:6, padding:"2px 6px", cursor:"pointer", fontSize:11, color:"var(--text-muted)" }}>{showPw[i]?"🙈":"👁️"}</button>
                       </div></div>
                   </div>
                   <div style={{ display:"flex", alignItems:"center", gap:8 }}>
                     <span style={{ fontSize:11, color: u.active===false ? "#9B2C2C" : "#22543D", fontWeight:600 }}>{u.active===false ? "Nonaktif" : "Aktif"}</span>
                     <div onClick={()=>handleToggleActive(i)} style={{
                       width:40, height:22, borderRadius:11, cursor:"pointer", padding:2,
-                      background: u.active===false ? "#CBD5E0" : "#48BB78",
+                      background: u.active===false ? "var(--text-subtle)" : "var(--success)",
                       transition:"background .2s", display:"flex", alignItems:"center",
                     }}>
                       <div style={{
@@ -945,35 +1098,35 @@ function UserModal({ users, onClose, onSave }) {
         })}
 
         {filteredList.length === 0 && searchUser && (
-          <div style={{ textAlign:"center", padding:16, color:"#CBD5E0", fontSize:12 }}>Tidak ada user yang cocok</div>
+          <div style={{ textAlign:"center", padding:16, color:"var(--text-subtle)", fontSize:12 }}>Tidak ada user yang cocok</div>
         )}
 
         {totalPages > 1 && (
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:4, marginTop:10 }}>
             <button onClick={()=>setPage(p=>Math.max(1,p-1))} disabled={safePage<=1}
-              style={{ fontSize:12, padding:"4px 10px", borderRadius:6, border:"1.5px solid #E2E8F0", background:safePage<=1?"#F7FAFC":"#fff", color:safePage<=1?"#CBD5E0":"#4A5568", cursor:safePage<=1?"default":"pointer", fontWeight:600 }}>‹</button>
+              style={{ fontSize:12, padding:"4px 10px", borderRadius:6, border:"1.5px solid var(--border)", background:safePage<=1?"var(--bg-secondary)":"var(--bg-card)", color:safePage<=1?"var(--text-subtle)":"var(--text-secondary)", cursor:safePage<=1?"default":"pointer", fontWeight:600 }}>‹</button>
             {Array.from({length:totalPages},(_,i)=>i+1).map(n=>(
               <button key={n} onClick={()=>setPage(n)} style={{
                 fontSize:12, padding:"4px 10px", borderRadius:6, cursor:"pointer", fontWeight:600,
-                border:n===safePage?"1.5px solid #6C7AE0":"1.5px solid #E2E8F0",
-                background:n===safePage?"#EBF4FF":"#fff", color:n===safePage?"#6C7AE0":"#718096",
+                border:n===safePage?"1.5px solid var(--accent)":"1.5px solid var(--border)",
+                background:n===safePage?"var(--accent-bg)":"var(--bg-card)", color:n===safePage?"var(--accent)":"var(--text-secondary)",
               }}>{n}</button>
             ))}
             <button onClick={()=>setPage(p=>Math.min(totalPages,p+1))} disabled={safePage>=totalPages}
-              style={{ fontSize:12, padding:"4px 10px", borderRadius:6, border:"1.5px solid #E2E8F0", background:safePage>=totalPages?"#F7FAFC":"#fff", color:safePage>=totalPages?"#CBD5E0":"#4A5568", cursor:safePage>=totalPages?"default":"pointer", fontWeight:600 }}>›</button>
+              style={{ fontSize:12, padding:"4px 10px", borderRadius:6, border:"1.5px solid var(--border)", background:safePage>=totalPages?"var(--bg-secondary)":"var(--bg-card)", color:safePage>=totalPages?"var(--text-subtle)":"var(--text-secondary)", cursor:safePage>=totalPages?"default":"pointer", fontWeight:600 }}>›</button>
           </div>
         )}
 
         {showConfirm && (
           <div style={{ position:"absolute", inset:0, background:"rgba(255,255,255,0.92)", borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", zIndex:10 }}>
-            <div style={{ background:"#fff", borderRadius:14, padding:"24px 20px", boxShadow:"0 4px 20px rgba(0,0,0,0.12)", maxWidth:320, width:"100%", textAlign:"center" }}>
+            <div style={{ background:"var(--bg-card)", borderRadius:14, padding:"24px 20px", boxShadow:"0 4px 20px rgba(0,0,0,0.12)", maxWidth:320, width:"100%", textAlign:"center" }}>
               <div style={{ fontSize:28, marginBottom:8 }}>💾</div>
-              <div style={{ fontSize:14, fontWeight:700, color:"#1A202C", marginBottom:4 }}>Ada perubahan belum disimpan</div>
-              <div style={{ fontSize:12, color:"#718096", marginBottom:16 }}>Simpan perubahan sebelum keluar?</div>
+              <div style={{ fontSize:14, fontWeight:700, color:"var(--text-primary)", marginBottom:4 }}>Ada perubahan belum disimpan</div>
+              <div style={{ fontSize:12, color:"var(--text-secondary)", marginBottom:16 }}>Simpan perubahan sebelum keluar?</div>
               <div style={{ display:"flex", gap:8 }}>
-                <button onClick={()=>{onSave(list);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"#48BB78", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Simpan</button>
-                <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Buang</button>
-                <button onClick={()=>setShowConfirm(false)} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", fontSize:13, fontWeight:600, cursor:"pointer" }}>Kembali</button>
+                <button onClick={()=>{onSave(list);onClose();}} style={{ flex:1, padding:"10px", borderRadius:10, border:"none", background:"var(--success)", color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer" }}>Simpan</button>
+                <button onClick={onClose} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Buang</button>
+                <button onClick={()=>setShowConfirm(false)} style={{ flex:1, padding:"10px", borderRadius:10, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:13, fontWeight:600, cursor:"pointer" }}>Kembali</button>
               </div>
             </div>
           </div>
@@ -998,9 +1151,22 @@ function App() {
   const [loadError, setLoadError] = useState(null);
   const isAdmin = currentUser?.role === "admin";
 
+  // Dark mode
+  const [darkMode, setDarkMode] = useState(() => {
+    try { return localStorage.getItem('pantau-theme') === 'dark'; } catch(e) { return false; }
+  });
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+  const toggleTheme = () => {
+    const next = !darkMode;
+    setDarkMode(next);
+    try { localStorage.setItem('pantau-theme', next ? 'dark' : 'light'); } catch(e) {}
+  };
+
   // Division name ↔ id mappings
-  const [divIdMap, setDivIdMap] = useState({}); // id → name
-  const [divNameToId, setDivNameToId] = useState({}); // name → id
+  const [divIdMap, setDivIdMap] = useState({});
+  const [divNameToId, setDivNameToId] = useState({});
 
   // Load data from Supabase
   const loadData = useCallback(async () => {
@@ -1031,10 +1197,13 @@ function App() {
 
   const [filterHealth, setFilterHealth] = useState("all");
   const [filterDiv, setFilterDiv] = useState("all");
+  const [filterPriority, setFilterPriority] = useState("all");
   const [search, setSearch] = useState("");
   const [filterDateFrom, setFilterDateFrom] = useState("");
   const [filterDateTo, setFilterDateTo] = useState("");
   const [datePreset, setDatePreset] = useState("");
+  const [showAllCompleted, setShowAllCompleted] = useState(false);
+  const COMPLETED_LIMIT = 5;
   const [dragOverCol, setDragOverCol] = useState(null);
   const [dropTarget, setDropTarget] = useState(null);
   const dragId = useRef(null);
@@ -1087,7 +1256,6 @@ function App() {
       const insertIdx = target ? Math.min(target.index, targetCards.length) : targetCards.length;
       targetCards.splice(insertIdx, 0, updated);
 
-      // Save to Supabase
       DB.saveProject(updated, divNameToId);
 
       return [...otherCards, ...targetCards];
@@ -1130,7 +1298,6 @@ function App() {
   const handleSaveDivs = async (newDivs) => {
     setDivs(newDivs);
     await DB.saveDivisions(newDivs);
-    // Reload to get fresh IDs
     const divData = await DB.getDivisions();
     const idMap = {};
     const nameMap = {};
@@ -1154,6 +1321,7 @@ function App() {
   const filtered = projects.filter(p => {
     if (filterHealth !== "all" && p.health !== filterHealth) return false;
     if (filterDiv !== "all" && p.div !== filterDiv) return false;
+    if (filterPriority !== "all" && p.priority !== filterPriority) return false;
     if (search && !p.name.toLowerCase().includes(search.toLowerCase()) && !p.div.toLowerCase().includes(search.toLowerCase())) return false;
     if (filterDateFrom || filterDateTo) {
       const pStart = parseDate(p.start);
@@ -1167,41 +1335,50 @@ function App() {
   });
 
   const divisions = divs;
+  const priorityCount = projects.filter(p=>p.priority==='priority').length;
+  const normalCount = projects.filter(p=>p.priority!=='priority').length;
 
   if (!currentUser) return <LoginScreen onLogin={setCurrentUser} onResetAdmin={handleResetAdmin} />;
 
   return (
-    <div style={{ fontFamily:"'Inter',-apple-system,sans-serif", background:"#F5F6FA", minHeight:"100vh" }}>
+    <div style={{ fontFamily:"'Inter',-apple-system,sans-serif", background:"var(--bg-main)", minHeight:"100vh", transition:"background .3s" }}>
 
       {/* Connection error banner */}
       {loadError && (
-        <div style={{ background:"#FED7D7", color:"#9B2C2C", padding:"10px 20px", fontSize:12, fontWeight:600, textAlign:"center" }}>
+        <div style={{ background:"var(--danger-border)", color:"#9B2C2C", padding:"10px 20px", fontSize:12, fontWeight:600, textAlign:"center" }}>
           ⚠️ {loadError}
         </div>
       )}
 
       {/* Header */}
-      <div style={{ background:"#fff", padding:"14px 20px", borderBottom:"1.5px solid #EDF2F7", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:8 }}>
-        <h1 style={{ fontSize:17, fontWeight:800, color:"#1A202C", margin:0 }}>Pantau Project</h1>
-        <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+      <div style={{ background:"var(--bg-card)", padding:"14px 20px", borderBottom:"1.5px solid var(--border-light)", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:8 }}>
+        <h1 style={{ fontSize:17, fontWeight:800, color:"var(--text-primary)", margin:0 }}>Pantau Project</h1>
+        <div style={{ display:"flex", alignItems:"center", gap:8, flexWrap:"wrap" }}>
+          <button onClick={toggleTheme} style={{
+            fontSize:12, fontWeight:600, padding:"6px 12px", borderRadius:8, border:"1.5px solid var(--border)",
+            background:"var(--bg-secondary)", color:"var(--text-secondary)", cursor:"pointer",
+            display:"flex", alignItems:"center", gap:4,
+          }}>
+            {darkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
           {isAdmin && (
-            <button onClick={()=>setShowUserModal(true)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", cursor:"pointer" }}>👤 Kelola User</button>
+            <button onClick={()=>setShowUserModal(true)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", cursor:"pointer" }}>👤 Kelola User</button>
           )}
           {isAdmin && (
-            <button onClick={()=>setShowDivModal(true)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid #E2E8F0", background:"#fff", color:"#718096", cursor:"pointer" }}>🏢 Kelola Divisi</button>
+            <button onClick={()=>setShowDivModal(true)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid var(--border)", background:"var(--bg-card)", color:"var(--text-secondary)", cursor:"pointer" }}>🏢 Kelola Divisi</button>
           )}
-          <div style={{ display:"flex", alignItems:"center", gap:6, padding:"4px 12px", background:"#F7FAFC", borderRadius:8 }}>
-            <span style={{ fontSize:11, fontWeight:700, padding:"2px 8px", borderRadius:6, background:isAdmin?"#EBF4FF":"#EDF2F7", color:isAdmin?"#6C7AE0":"#718096" }}>{isAdmin?"🔧 Admin":"👁️ Viewer"}</span>
-            <span style={{ fontSize:12, fontWeight:600, color:"#2D3748" }}>{currentUser.name}</span>
+          <div style={{ display:"flex", alignItems:"center", gap:6, padding:"4px 12px", background:"var(--bg-secondary)", borderRadius:8 }}>
+            <span style={{ fontSize:11, fontWeight:700, padding:"2px 8px", borderRadius:6, background:isAdmin?"var(--accent-bg)":"var(--bg-column)", color:isAdmin?"var(--accent)":"var(--text-secondary)" }}>{isAdmin?"🔧 Admin":"👁️ Viewer"}</span>
+            <span style={{ fontSize:12, fontWeight:600, color:"var(--text-primary)" }}>{currentUser.name}</span>
           </div>
-          <button onClick={()=>setCurrentUser(null)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid #FED7D7", background:"#FFF5F5", color:"#E53E3E", cursor:"pointer" }}>Keluar</button>
+          <button onClick={()=>setCurrentUser(null)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid var(--danger-border)", background:"var(--danger-bg)", color:"var(--danger)", cursor:"pointer" }}>Keluar</button>
         </div>
       </div>
 
       {/* Filters + Health status */}
-      <div style={{ padding:"8px 20px", display:"flex", alignItems:"center", gap:8, flexWrap:"wrap", background:"#fff", borderBottom:"1.5px solid #EDF2F7" }}>
+      <div style={{ padding:"8px 20px", display:"flex", alignItems:"center", gap:8, flexWrap:"wrap", background:"var(--bg-card)", borderBottom:"1.5px solid var(--border-light)" }}>
         <input type="text" placeholder="🔍 Cari..." value={search} onChange={e=>setSearch(e.target.value)}
-          style={{ fontSize:12, padding:"6px 10px", borderRadius:8, border:"1.5px solid #EDF2F7", outline:"none", width:140, background:"#F7FAFC" }} />
+          style={{ fontSize:12, padding:"6px 10px", borderRadius:8, border:"1.5px solid var(--border-light)", outline:"none", width:140, background:"var(--bg-secondary)", color:"var(--text-primary)" }} />
         <div style={{ display:"flex", alignItems:"center", gap:4 }}>
           <select value={datePreset} onChange={e=>{
             const v = e.target.value;
@@ -1210,20 +1387,14 @@ function App() {
             const y = now.getFullYear();
             const fmt = d => d.toISOString().split("T")[0];
             if(v==="") { setFilterDateFrom(""); setFilterDateTo(""); }
-            else if(v==="q1") {
-              setFilterDateFrom(fmt(new Date(y,0,1))); setFilterDateTo(fmt(new Date(y,2,31)));
-            } else if(v==="q2") {
-              setFilterDateFrom(fmt(new Date(y,3,1))); setFilterDateTo(fmt(new Date(y,5,30)));
-            } else if(v==="q3") {
-              setFilterDateFrom(fmt(new Date(y,6,1))); setFilterDateTo(fmt(new Date(y,8,30)));
-            } else if(v==="q4") {
-              setFilterDateFrom(fmt(new Date(y,9,1))); setFilterDateTo(fmt(new Date(y,11,31)));
-            } else if(v==="this_year") {
-              setFilterDateFrom(fmt(new Date(y,0,1))); setFilterDateTo(fmt(new Date(y,11,31)));
-            } else if(v==="last_year") {
-              setFilterDateFrom(fmt(new Date(y-1,0,1))); setFilterDateTo(fmt(new Date(y-1,11,31)));
-            } else if(v==="custom") {}
-          }} style={{ fontSize:11, padding:"6px 8px", borderRadius:8, border:"1.5px solid #EDF2F7", background:"#F7FAFC", cursor:"pointer", color:"#4A5568" }}>
+            else if(v==="q1") { setFilterDateFrom(fmt(new Date(y,0,1))); setFilterDateTo(fmt(new Date(y,2,31))); }
+            else if(v==="q2") { setFilterDateFrom(fmt(new Date(y,3,1))); setFilterDateTo(fmt(new Date(y,5,30))); }
+            else if(v==="q3") { setFilterDateFrom(fmt(new Date(y,6,1))); setFilterDateTo(fmt(new Date(y,8,30))); }
+            else if(v==="q4") { setFilterDateFrom(fmt(new Date(y,9,1))); setFilterDateTo(fmt(new Date(y,11,31))); }
+            else if(v==="this_year") { setFilterDateFrom(fmt(new Date(y,0,1))); setFilterDateTo(fmt(new Date(y,11,31))); }
+            else if(v==="last_year") { setFilterDateFrom(fmt(new Date(y-1,0,1))); setFilterDateTo(fmt(new Date(y-1,11,31))); }
+            else if(v==="custom") {}
+          }} style={{ fontSize:11, padding:"6px 8px", borderRadius:8, border:"1.5px solid var(--border-light)", background:"var(--bg-secondary)", cursor:"pointer", color:"var(--text-secondary)" }}>
             <option value="">📅 Semua Periode</option>
             <option value="q1">Kwartal 1 (Jan–Mar)</option>
             <option value="q2">Kwartal 2 (Apr–Jun)</option>
@@ -1236,36 +1407,53 @@ function App() {
           {(datePreset==="custom" || filterDateFrom || filterDateTo) && (
             <>
               <input type="date" value={filterDateFrom} onChange={e=>{setFilterDateFrom(e.target.value);setDatePreset("custom");}} title="Dari tanggal"
-                style={{ fontSize:11, padding:"6px 8px", borderRadius:8, border:"1.5px solid #EDF2F7", outline:"none", background:"#F7FAFC", cursor:"pointer" }} />
-              <span style={{ fontSize:11, color:"#A0AEC0" }}>—</span>
+                style={{ fontSize:11, padding:"6px 8px", borderRadius:8, border:"1.5px solid var(--border-light)", outline:"none", background:"var(--bg-secondary)", cursor:"pointer", color:"var(--text-secondary)" }} />
+              <span style={{ fontSize:11, color:"var(--text-muted)" }}>—</span>
               <input type="date" value={filterDateTo} onChange={e=>{setFilterDateTo(e.target.value);setDatePreset("custom");}} title="Sampai tanggal"
-                style={{ fontSize:11, padding:"6px 8px", borderRadius:8, border:"1.5px solid #EDF2F7", outline:"none", background:"#F7FAFC", cursor:"pointer" }} />
+                style={{ fontSize:11, padding:"6px 8px", borderRadius:8, border:"1.5px solid var(--border-light)", outline:"none", background:"var(--bg-secondary)", cursor:"pointer", color:"var(--text-secondary)" }} />
             </>
           )}
           {(filterDateFrom || filterDateTo) && (
-            <button onClick={()=>{setFilterDateFrom("");setFilterDateTo("");setDatePreset("");}} style={{ fontSize:11, padding:"5px 8px", borderRadius:8, border:"1.5px solid #FED7D7", background:"#FFF5F5", color:"#E53E3E", cursor:"pointer", fontWeight:600 }}>✕</button>
+            <button onClick={()=>{setFilterDateFrom("");setFilterDateTo("");setDatePreset("");}} style={{ fontSize:11, padding:"5px 8px", borderRadius:8, border:"1.5px solid var(--danger-border)", background:"var(--danger-bg)", color:"var(--danger)", cursor:"pointer", fontWeight:600 }}>✕</button>
           )}
         </div>
         <select value={filterDiv} onChange={e=>setFilterDiv(e.target.value)}
-          style={{ fontSize:12, padding:"6px 8px", borderRadius:8, border:"1.5px solid #EDF2F7", background:"#F7FAFC", cursor:"pointer" }}>
+          style={{ fontSize:12, padding:"6px 8px", borderRadius:8, border:"1.5px solid var(--border-light)", background:"var(--bg-secondary)", cursor:"pointer", color:"var(--text-secondary)" }}>
           <option value="all">Semua Divisi</option>
           {divisions.map(d=><option key={d} value={d}>{d}</option>)}
         </select>
+
+        {/* Priority filter */}
+        <div style={{ display:"flex", alignItems:"center", gap:4 }}>
+          <button onClick={()=>setFilterPriority(filterPriority==="priority"?"all":"priority")} style={{
+            fontSize:10, fontWeight:600, padding:"4px 10px", borderRadius:8, cursor:"pointer", transition:"all .15s",
+            border: filterPriority==="priority" ? "1.5px solid #E53E3E" : "1.5px solid var(--border)",
+            background: filterPriority==="priority" ? "var(--priority-badge-bg)" : "var(--bg-card)",
+            color: filterPriority==="priority" ? "var(--priority-badge-color)" : "var(--text-secondary)",
+          }}>🔥 Prioritas ({priorityCount})</button>
+          <button onClick={()=>setFilterPriority(filterPriority==="normal"?"all":"normal")} style={{
+            fontSize:10, fontWeight:600, padding:"4px 10px", borderRadius:8, cursor:"pointer", transition:"all .15s",
+            border: filterPriority==="normal" ? "1.5px solid var(--accent)" : "1.5px solid var(--border)",
+            background: filterPriority==="normal" ? "var(--accent-bg)" : "var(--bg-card)",
+            color: filterPriority==="normal" ? "var(--accent)" : "var(--text-secondary)",
+          }}>📁 Reguler ({normalCount})</button>
+        </div>
+
         <div style={{ marginLeft:"auto", display:"flex", alignItems:"center", gap:4, flexWrap:"wrap" }}>
           <button onClick={()=>setFilterHealth("all")} style={{
             fontSize:10, fontWeight:600, padding:"4px 10px", borderRadius:8, cursor:"pointer", transition:"all .15s",
-            border: filterHealth==="all" ? "1.5px solid #6C7AE0" : "1.5px solid #E2E8F0",
-            background: filterHealth==="all" ? "#EBF4FF" : "#fff",
-            color: filterHealth==="all" ? "#6C7AE0" : "#718096",
+            border: filterHealth==="all" ? "1.5px solid var(--accent)" : "1.5px solid var(--border)",
+            background: filterHealth==="all" ? "var(--accent-bg)" : "var(--bg-card)",
+            color: filterHealth==="all" ? "var(--accent)" : "var(--text-secondary)",
           }}>Semua ({projects.length})</button>
           {Object.entries(H).map(([k,v])=>{
             const cnt = projects.filter(p=>p.health===k).length;
             return (
               <button key={k} onClick={()=>setFilterHealth(filterHealth===k?"all":k)} style={{
                 fontSize:10, fontWeight:600, padding:"4px 10px", borderRadius:8, cursor:"pointer", transition:"all .15s",
-                border: filterHealth===k ? `1.5px solid ${v.border}` : "1.5px solid #E2E8F0",
-                background: filterHealth===k ? v.bg : "#fff",
-                color: filterHealth===k ? v.c : "#718096",
+                border: filterHealth===k ? `1.5px solid ${v.border}` : "1.5px solid var(--border)",
+                background: filterHealth===k ? v.bg : "var(--bg-card)",
+                color: filterHealth===k ? v.c : "var(--text-secondary)",
               }}>{v.e} {v.l} ({cnt})</button>
             );
           })}
@@ -1277,51 +1465,73 @@ function App() {
         {PHASES.map(ph => {
           const cards = filtered.filter(p => p.phase === ph.id);
           const isOver = isAdmin && dragOverCol === ph.id;
+          // Sort: priority first
+          const sortedCards = [...cards].sort((a,b) => {
+            if (a.priority === 'priority' && b.priority !== 'priority') return -1;
+            if (a.priority !== 'priority' && b.priority === 'priority') return 1;
+            return 0;
+          });
           return (
             <div key={ph.id}
-              onDragOver={e => isAdmin && onColDragOver(e, ph.id, cards.length)}
+              onDragOver={e => isAdmin && onColDragOver(e, ph.id, sortedCards.length)}
               onDragLeave={onDragLeave}
               onDrop={e => isAdmin && onDrop(e, ph.id)}
               style={{ flex:"1 0 260px", maxWidth:340, minWidth:260 }}
             >
-              <div style={{ background:"#fff", borderRadius:"12px 12px 0 0", padding:"10px 14px", borderBottom:"2px solid #EDF2F7", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+              <div style={{ background:"var(--bg-card)", borderRadius:"12px 12px 0 0", padding:"10px 14px", borderBottom:"2px solid var(--border-light)", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
                 <div>
-                  <div style={{ fontSize:13, fontWeight:700, color:"#1A202C" }}>{ph.l}</div>
-                  <div style={{ fontSize:10, color:"#A0AEC0" }}>{ph.n}</div>
+                  <div style={{ fontSize:13, fontWeight:700, color:"var(--text-primary)" }}>{ph.l}</div>
+                  <div style={{ fontSize:10, color:"var(--text-muted)" }}>{ph.n}</div>
                 </div>
                 <div style={{ display:"flex", alignItems:"center", gap:6 }}>
-                  <span style={{ fontSize:13, fontWeight:700, background:"#EDF2F7", color:"#718096", borderRadius:"50%", width:26, height:26, display:"flex", alignItems:"center", justifyContent:"center" }}>{cards.length}</span>
+                  <span style={{ fontSize:13, fontWeight:700, background:"var(--bg-column)", color:"var(--text-secondary)", borderRadius:"50%", width:26, height:26, display:"flex", alignItems:"center", justifyContent:"center" }}>{cards.length}</span>
                   {isAdmin && (
-                    <button onClick={()=>setAddPhase(ph.id)} title="Tambah project" style={{ background:"none", border:"1.5px solid #E2E8F0", borderRadius:"50%", width:26, height:26, display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", fontSize:14, color:"#A0AEC0", lineHeight:1 }}>+</button>
+                    <button onClick={()=>setAddPhase(ph.id)} title="Tambah project" style={{ background:"none", border:"1.5px solid var(--border)", borderRadius:"50%", width:26, height:26, display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", fontSize:14, color:"var(--text-muted)", lineHeight:1 }}>+</button>
                   )}
                 </div>
               </div>
-              <div style={{
-                background: isOver ? "#EBF4FF" : "#EDF2F7", borderRadius:"0 0 12px 12px", padding:"8px 8px 12px",
-                minHeight:120, transition:"background .15s", border: isOver ? "2px dashed #6C7AE0" : "2px dashed transparent",
-              }}>
-                {cards.map((p, idx) => (
-                  <div key={p.id}>
-                    {isAdmin && dropTarget && dropTarget.phase === ph.id && dropTarget.index === idx && dragId.current && dragId.current !== p.id && (
-                      <div style={{ height:3, borderRadius:2, background:"#6C7AE0", margin:"2px 4px 4px" }} />
+              {(() => {
+                const isCompleted = ph.id === "completed";
+                const hiddenCount = isCompleted && !showAllCompleted ? Math.max(0, sortedCards.length - COMPLETED_LIMIT) : 0;
+                const visibleCards = isCompleted && !showAllCompleted ? sortedCards.slice(0, COMPLETED_LIMIT) : sortedCards;
+                return (
+                  <div style={{
+                    background: isOver ? "var(--accent-bg)" : "var(--bg-column)", borderRadius:"0 0 12px 12px", padding:"8px 8px 12px",
+                    minHeight:120, transition:"background .15s", border: isOver ? "2px dashed var(--accent)" : "2px dashed transparent",
+                  }}>
+                    {visibleCards.map((p, idx) => (
+                      <div key={p.id}>
+                        {isAdmin && dropTarget && dropTarget.phase === ph.id && dropTarget.index === idx && dragId.current && dragId.current !== p.id && (
+                          <div style={{ height:3, borderRadius:2, background:"var(--accent)", margin:"2px 4px 4px" }} />
+                        )}
+                        <div
+                          onDragEnd={onDragEnd}
+                          onDragOver={e => isAdmin && onCardDragOver(e, ph.id, idx)}
+                        >
+                          <Card p={p} onClick={setSelected} onDragStart={onDragStart} isAdmin={isAdmin} />
+                        </div>
+                      </div>
+                    ))}
+                    {isAdmin && dropTarget && dropTarget.phase === ph.id && dropTarget.index >= sortedCards.length && dragId.current && !sortedCards.find(c=>c.id===dragId.current && sortedCards.indexOf(c)===sortedCards.length-1) && (
+                      <div style={{ height:3, borderRadius:2, background:"var(--accent)", margin:"2px 4px" }} />
                     )}
-                    <div
-                      onDragEnd={onDragEnd}
-                      onDragOver={e => isAdmin && onCardDragOver(e, ph.id, idx)}
-                    >
-                      <Card p={p} onClick={setSelected} onDragStart={onDragStart} isAdmin={isAdmin} />
-                    </div>
+                    {isCompleted && sortedCards.length > COMPLETED_LIMIT && (
+                      <button onClick={()=>setShowAllCompleted(!showAllCompleted)} style={{
+                        width:"100%", padding:"8px", borderRadius:8, border:"1.5px dashed var(--text-subtle)",
+                        background:"var(--bg-card)", color:"var(--text-secondary)", fontSize:11, fontWeight:600,
+                        cursor:"pointer", marginTop:4, transition:"all .15s",
+                      }}>
+                        {showAllCompleted ? "⬆️ Sembunyikan" : `⬇️ Tampilkan ${hiddenCount} lainnya`}
+                      </button>
+                    )}
+                    {sortedCards.length === 0 && (
+                      <div style={{ textAlign:"center", padding:"28px 12px", color:"var(--text-subtle)", fontSize:12, border:"2px dashed var(--border)", borderRadius:10, background:"var(--bg-card)" }}>
+                        {isAdmin ? "Geser card ke sini" : "Tidak ada project"}
+                      </div>
+                    )}
                   </div>
-                ))}
-                {isAdmin && dropTarget && dropTarget.phase === ph.id && dropTarget.index >= cards.length && dragId.current && !cards.find(c=>c.id===dragId.current && cards.indexOf(c)===cards.length-1) && (
-                  <div style={{ height:3, borderRadius:2, background:"#6C7AE0", margin:"2px 4px" }} />
-                )}
-                {cards.length === 0 && (
-                  <div style={{ textAlign:"center", padding:"28px 12px", color:"#CBD5E0", fontSize:12, border:"2px dashed #E2E8F0", borderRadius:10, background:"#fff" }}>
-                    {isAdmin ? "Geser card ke sini" : "Tidak ada project"}
-                  </div>
-                )}
-              </div>
+                );
+              })()}
             </div>
           );
         })}

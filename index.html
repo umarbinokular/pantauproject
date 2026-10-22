@@ -1139,7 +1139,13 @@ function UserModal({ users, onClose, onSave }) {
 
 function App() {
   const [users, setUsers] = useState(INIT_USERS);
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, _setCurrentUser] = useState(() => {
+    try { const s = localStorage.getItem('pantau-session'); return s ? JSON.parse(s) : null; } catch(e) { return null; }
+  });
+  const setCurrentUser = (u) => {
+    _setCurrentUser(u);
+    try { if (u) localStorage.setItem('pantau-session', JSON.stringify(u)); else localStorage.removeItem('pantau-session'); } catch(e) {}
+  };
   const [projects, setProjects] = useState(initProjects);
   const [divs, setDivs] = useState(INIT_DIVS);
   const [selected, setSelected] = useState(null);

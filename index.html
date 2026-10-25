@@ -1919,7 +1919,6 @@ function App() {
             </button>
           )}
           <div style={{ display:"flex", alignItems:"center", gap:6, padding:"4px 12px", background:"var(--bg-secondary)", borderRadius:8 }}>
-            <span style={{ fontSize:11, fontWeight:700, padding:"2px 8px", borderRadius:6, background:isAdmin?"var(--accent-bg)":"var(--bg-column)", color:isAdmin?"var(--accent)":"var(--text-secondary)" }}>{isAdmin?"🔧 Admin":"👁️ Viewer"}</span>
             <span style={{ fontSize:12, fontWeight:600, color:"var(--text-primary)" }}>{currentUser.name}</span>
           </div>
           <button onClick={()=>setCurrentUser(null)} style={{ fontSize:12, fontWeight:600, padding:"6px 14px", borderRadius:8, border:"1.5px solid var(--danger-border)", background:"var(--danger-bg)", color:"var(--danger)", cursor:"pointer" }}>Keluar</button>

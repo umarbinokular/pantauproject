@@ -189,41 +189,36 @@ const DB = {
   },
   async saveProject(p, divNameToId) {
     const divId = divNameToId[p.div];
-    if (!divId) return p;
+    if (!divId) { console.error('saveProject: divisi tidak ditemukan:', p.div, 'available:', Object.keys(divNameToId)); return p; }
+    const payload = {
+      name: p.name, division_id: divId,
+      phase: p.phase || 'initiation', health: p.health || 'on_track', progress: p.progress || 0,
+      start_date: p.start || null, deadline: p.deadline || null,
+      summary: p.summary || '', manual_phase: p._manualPhase || null,
+      priority: p.priority || 'normal',
+      requirements: p.requirements || '',
+      attachments: p.attachments || [],
+      comments: p.comments || [],
+    };
     if (p._dbId) {
-      await sb.from('projects').update({
-        name: p.name, division_id: divId,
-        phase: p.phase, health: p.health, progress: p.progress,
-        start_date: p.start || null, deadline: p.deadline || null,
-        summary: p.summary, manual_phase: p._manualPhase || null,
-        priority: p.priority || 'normal',
-        requirements: p.requirements || '',
-        attachments: p.attachments || [],
-        comments: p.comments || [],
-      }).eq('id', p._dbId);
+      const { error } = await sb.from('projects').update(payload).eq('id', p._dbId);
+      if (error) console.error('saveProject update error:', error);
       await sb.from('milestones').delete().eq('project_id', p._dbId);
-      if (p.milestones.length > 0) {
+      if (p.milestones && p.milestones.length > 0) {
         await sb.from('milestones').insert(p.milestones.map((m, i) => ({
           project_id: p._dbId, label: m.l, is_done: m.d,
           start_date: m.s || null, end_date: m.e || null, sort_order: i,
         })));
       }
     } else {
-      const { data } = await sb.from('projects').insert({
-        name: p.name, division_id: divId,
-        phase: p.phase, health: p.health, progress: p.progress,
-        start_date: p.start || null, deadline: p.deadline || null,
-        summary: p.summary, manual_phase: p._manualPhase || null,
-        priority: p.priority || 'normal',
-        requirements: p.requirements || '',
-        attachments: p.attachments || [],
-        comments: p.comments || [],
-        sort_order: 0,
+      const { data, error } = await sb.from('projects').insert({
+        ...payload, sort_order: 0,
       }).select().single();
+      if (error) { console.error('saveProject insert error:', error); return p; }
       if (data) {
         p._dbId = data.id;
         p.id = 'p' + data.id;
-        if (p.milestones.length > 0) {
+        if (p.milestones && p.milestones.length > 0) {
           await sb.from('milestones').insert(p.milestones.map((m, i) => ({
             project_id: data.id, label: m.l, is_done: m.d,
             start_date: m.s || null, end_date: m.e || null, sort_order: i,
@@ -1884,7 +1879,9 @@ function App() {
   const handleSave = async (updated) => {
     const calculated = autoCalc(updated);
     const old = projects.find(x => x.id === calculated.id);
-    if (!demoMode) await DB.saveProject(calculated, divNameToId);
+    if (!demoMode) {
+      try { await DB.saveProject(calculated, divNameToId); } catch(err) { console.error('handleSave DB error:', err); }
+    }
     setProjects(prev => prev.map(p => p.id === calculated.id ? calculated : p));
     setSelected(calculated);
     if (old) {
@@ -1916,11 +1913,21 @@ function App() {
   const handleAdd = async (project) => {
     const calculated = autoCalc(project);
     if (!demoMode) {
-      const saved = await DB.saveProject(calculated, divNameToId);
-      setProjects(prev => [...prev, saved]);
-      setOpenInEdit(true);
-      setSelected(saved);
-      addLog("add", saved.name, "Task baru dibuat");
+      try {
+        const saved = await DB.saveProject(calculated, divNameToId);
+        setProjects(prev => [...prev, saved]);
+        setOpenInEdit(true);
+        setSelected(saved);
+        addLog("add", saved.name, "Task baru dibuat");
+      } catch (err) {
+        console.error('handleAdd DB error:', err);
+        // Tetap tampilkan di UI meski DB gagal
+        const fallback = { ...calculated, id: 'p' + Date.now() };
+        setProjects(prev => [...prev, fallback]);
+        setOpenInEdit(true);
+        setSelected(fallback);
+        addLog("add", fallback.name, "Task baru dibuat (belum tersimpan ke database)");
+      }
     } else {
       const demoSaved = { ...calculated, id: 'd' + Date.now() };
       setProjects(prev => [...prev, demoSaved]);

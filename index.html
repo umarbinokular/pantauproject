@@ -187,16 +187,19 @@ const DB = {
       _prevPhase: p.prev_phase || null,
     }));
   },
+  _hasAttachCol: null, // cached: apakah kolom attachments ada di DB
+  async _checkAttachCol() {
+    if (this._hasAttachCol !== null) return this._hasAttachCol;
+    // Test insert kosong lalu rollback? Cukup cek via dummy update
+    const { error } = await sb.from('projects').select('attachments').limit(1);
+    this._hasAttachCol = !error;
+    if (!this._hasAttachCol) console.warn('Kolom attachments belum ada di tabel projects. Jalankan supabase-migrate.sql untuk menambahkannya.');
+    return this._hasAttachCol;
+  },
   async saveProject(p, divNameToId) {
     const divId = divNameToId[p.div];
     if (!divId) { console.error('saveProject: divisi tidak ditemukan:', p.div, 'available:', Object.keys(divNameToId)); return p; }
-    // Strip attachment data jika terlalu besar (>1MB total) untuk hindari Supabase payload limit
-    let attachments = p.attachments || [];
-    const totalSize = JSON.stringify(attachments).length;
-    if (totalSize > 1000000) {
-      console.warn('Attachments terlalu besar (' + Math.round(totalSize/1024) + 'KB), stripping data untuk DB');
-      attachments = attachments.map(a => ({ name: a.name, type: a.type, size: a.size }));
-    }
+    const hasAttach = await this._checkAttachCol();
     const payload = {
       name: p.name, division_id: divId,
       phase: p.phase || 'initiation', health: p.health || 'on_track', progress: p.progress || 0,
@@ -204,9 +207,17 @@ const DB = {
       summary: p.summary || '', manual_phase: p._manualPhase || null,
       priority: p.priority || 'normal',
       requirements: p.requirements || '',
-      attachments: attachments,
       comments: p.comments || [],
     };
+    if (hasAttach) {
+      let attachments = p.attachments || [];
+      const totalSize = JSON.stringify(attachments).length;
+      if (totalSize > 1000000) {
+        console.warn('Attachments terlalu besar (' + Math.round(totalSize/1024) + 'KB), stripping data');
+        attachments = attachments.map(a => ({ name: a.name, type: a.type, size: a.size }));
+      }
+      payload.attachments = attachments;
+    }
     if (p._dbId) {
       const { error } = await sb.from('projects').update(payload).eq('id', p._dbId);
       if (error) { console.error('saveProject update error:', error); throw error; }

@@ -190,6 +190,13 @@ const DB = {
   async saveProject(p, divNameToId) {
     const divId = divNameToId[p.div];
     if (!divId) { console.error('saveProject: divisi tidak ditemukan:', p.div, 'available:', Object.keys(divNameToId)); return p; }
+    // Strip attachment data jika terlalu besar (>1MB total) untuk hindari Supabase payload limit
+    let attachments = p.attachments || [];
+    const totalSize = JSON.stringify(attachments).length;
+    if (totalSize > 1000000) {
+      console.warn('Attachments terlalu besar (' + Math.round(totalSize/1024) + 'KB), stripping data untuk DB');
+      attachments = attachments.map(a => ({ name: a.name, type: a.type, size: a.size }));
+    }
     const payload = {
       name: p.name, division_id: divId,
       phase: p.phase || 'initiation', health: p.health || 'on_track', progress: p.progress || 0,
@@ -197,12 +204,12 @@ const DB = {
       summary: p.summary || '', manual_phase: p._manualPhase || null,
       priority: p.priority || 'normal',
       requirements: p.requirements || '',
-      attachments: p.attachments || [],
+      attachments: attachments,
       comments: p.comments || [],
     };
     if (p._dbId) {
       const { error } = await sb.from('projects').update(payload).eq('id', p._dbId);
-      if (error) console.error('saveProject update error:', error);
+      if (error) { console.error('saveProject update error:', error); throw error; }
       await sb.from('milestones').delete().eq('project_id', p._dbId);
       if (p.milestones && p.milestones.length > 0) {
         await sb.from('milestones').insert(p.milestones.map((m, i) => ({
@@ -214,7 +221,7 @@ const DB = {
       const { data, error } = await sb.from('projects').insert({
         ...payload, sort_order: 0,
       }).select().single();
-      if (error) { console.error('saveProject insert error:', error); return p; }
+      if (error) { console.error('saveProject insert error:', error); throw error; }
       if (data) {
         p._dbId = data.id;
         p.id = 'p' + data.id;
@@ -1880,7 +1887,12 @@ function App() {
     const calculated = autoCalc(updated);
     const old = projects.find(x => x.id === calculated.id);
     if (!demoMode) {
-      try { await DB.saveProject(calculated, divNameToId); } catch(err) { console.error('handleSave DB error:', err); }
+      try {
+        await DB.saveProject(calculated, divNameToId);
+      } catch(err) {
+        console.error('handleSave DB error:', err);
+        setToasts(prev => [...prev, { id: Date.now(), title: "⚠️ Gagal Update Database", body: `Error: ${err.message || err.details || JSON.stringify(err)}` }]);
+      }
     }
     setProjects(prev => prev.map(p => p.id === calculated.id ? calculated : p));
     setSelected(calculated);
@@ -1919,14 +1931,15 @@ function App() {
         setOpenInEdit(true);
         setSelected(saved);
         addLog("add", saved.name, "Task baru dibuat");
+        setToasts(prev => [...prev, { id: Date.now(), title: "✅ Tersimpan", body: `"${saved.name}" berhasil ditambahkan ke database` }]);
       } catch (err) {
         console.error('handleAdd DB error:', err);
-        // Tetap tampilkan di UI meski DB gagal
         const fallback = { ...calculated, id: 'p' + Date.now() };
         setProjects(prev => [...prev, fallback]);
         setOpenInEdit(true);
         setSelected(fallback);
-        addLog("add", fallback.name, "Task baru dibuat (belum tersimpan ke database)");
+        addLog("add", fallback.name, "Task baru dibuat (GAGAL simpan ke database)");
+        setToasts(prev => [...prev, { id: Date.now(), title: "⚠️ Gagal Simpan ke Database", body: `Error: ${err.message || err.details || JSON.stringify(err)}` }]);
       }
     } else {
       const demoSaved = { ...calculated, id: 'd' + Date.now() };

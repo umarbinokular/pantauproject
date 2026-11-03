@@ -187,33 +187,51 @@ const DB = {
       _prevPhase: p.prev_phase || null,
     }));
   },
-  _hasAttachCol: null, // cached: apakah kolom attachments ada di DB
-  async _checkAttachCol() {
-    if (this._hasAttachCol !== null) return this._hasAttachCol;
-    // Test insert kosong lalu rollback? Cukup cek via dummy update
-    const { error } = await sb.from('projects').select('attachments').limit(1);
-    this._hasAttachCol = !error;
-    if (!this._hasAttachCol) console.warn('Kolom attachments belum ada di tabel projects. Jalankan supabase-migrate.sql untuk menambahkannya.');
-    return this._hasAttachCol;
+  _dbCols: null, // cached: kolom yang ada di tabel projects
+  async _getDbCols() {
+    if (this._dbCols) return this._dbCols;
+    const { data } = await sb.from('projects').select('*').limit(0);
+    // Supabase returns empty array but headers tell columns; fallback: try known cols one by one
+    // Simpler: just try select specific cols and see which work
+    const allCols = ['name','division_id','phase','health','progress','start_date','deadline','summary','manual_phase','priority','requirements','attachments','comments','sort_order','archived','prev_phase'];
+    const available = new Set();
+    // Batch check: select all cols, see error
+    const { error } = await sb.from('projects').select(allCols.join(',')).limit(1);
+    if (!error) {
+      allCols.forEach(c => available.add(c));
+    } else {
+      // Fallback: check each column
+      for (const col of allCols) {
+        const { error: e } = await sb.from('projects').select(col).limit(1);
+        if (!e) available.add(col);
+      }
+    }
+    this._dbCols = available;
+    console.log('DB columns detected:', [...available]);
+    const missing = allCols.filter(c => !available.has(c));
+    if (missing.length) console.warn('Kolom belum ada di DB:', missing.join(', '), '— Jalankan supabase-migrate.sql');
+    return this._dbCols;
   },
   async saveProject(p, divNameToId) {
     const divId = divNameToId[p.div];
     if (!divId) { console.error('saveProject: divisi tidak ditemukan:', p.div, 'available:', Object.keys(divNameToId)); return p; }
-    const hasAttach = await this._checkAttachCol();
-    const payload = {
-      name: p.name, division_id: divId,
-      phase: p.phase || 'initiation', health: p.health || 'on_track', progress: p.progress || 0,
-      start_date: p.start || null, deadline: p.deadline || null,
-      summary: p.summary || '', manual_phase: p._manualPhase || null,
-      priority: p.priority || 'normal',
-      requirements: p.requirements || '',
-      comments: p.comments || [],
-    };
-    if (hasAttach) {
+    const cols = await this._getDbCols();
+    const has = (c) => cols.has(c);
+    const payload = { name: p.name, division_id: divId };
+    if (has('phase')) payload.phase = p.phase || 'initiation';
+    if (has('health')) payload.health = p.health || 'on_track';
+    if (has('progress')) payload.progress = p.progress || 0;
+    if (has('start_date')) payload.start_date = p.start || null;
+    if (has('deadline')) payload.deadline = p.deadline || null;
+    if (has('summary')) payload.summary = p.summary || '';
+    if (has('manual_phase')) payload.manual_phase = p._manualPhase || null;
+    if (has('priority')) payload.priority = p.priority || 'normal';
+    if (has('requirements')) payload.requirements = p.requirements || '';
+    if (has('comments')) payload.comments = p.comments || [];
+    if (has('attachments')) {
       let attachments = p.attachments || [];
       const totalSize = JSON.stringify(attachments).length;
       if (totalSize > 1000000) {
-        console.warn('Attachments terlalu besar (' + Math.round(totalSize/1024) + 'KB), stripping data');
         attachments = attachments.map(a => ({ name: a.name, type: a.type, size: a.size }));
       }
       payload.attachments = attachments;
@@ -229,9 +247,8 @@ const DB = {
         })));
       }
     } else {
-      const { data, error } = await sb.from('projects').insert({
-        ...payload, sort_order: 0,
-      }).select().single();
+      if (has('sort_order')) payload.sort_order = 0;
+      const { data, error } = await sb.from('projects').insert(payload).select().single();
       if (error) { console.error('saveProject insert error:', error); throw error; }
       if (data) {
         p._dbId = data.id;
